@@ -1,0 +1,161 @@
+case_id,activity,timestamp,resource
+1001,Open position,2025-03-27 22:00:00,Unknown
+1001,Publish ,2025-03-27 23:08:00,Unknown
+1001,Distribute on job boards,2025-03-27 23:56:00,HR
+1001,Advertise on social media,2025-03-28 00:42:00,Unknown
+1001,Retrieve applications,2025-03-28 02:31:00,Unknown
+1001,Pre-select candidates for interview,2025-03-28 03:33:00,Unknown
+1001,Select candidate for offer,2025-03-28 05:14:00,Unknown
+1001,Prepare offer,2025-03-28 06:11:00,Unknown
+1001,Send offer to candidate,2025-03-28 07:36:00,Unknown
+1001,Get candidate reply,2025-03-28 08:08:00,Unknown
+1001,Congratulate new hre,2025-03-28 09:21:00,Unknown
+1001,Informe other candidates,2025-03-28 10:32:00,Unknown
+1001,Perform HR interview,2025-03-28 11:03:00,Unknown
+1001,Perform Manager interview,2025-03-28 12:08:00,Unknown
+1001,Inform rejection,2025-03-28 13:51:00,Unknown
+1001,Send rejection message,2025-03-28 15:16:00,Unknown
+1002,Open position,2025-03-29 22:00:00,Unknown
+1002,Publish ,2025-03-29 23:02:00,Unknown
+1002,Distribute on job boards,2025-03-29 23:53:00,HR
+1002,Advertise on social media,2025-03-30 01:18:00,Unknown
+1002,Retrieve applications,2025-03-30 02:15:00,Unknown
+1002,Pre-select candidates for interview,2025-03-30 02:52:00,Unknown
+1002,Select candidate for offer,2025-03-30 04:28:00,Unknown
+1002,Prepare offer,2025-03-30 05:04:00,Unknown
+1002,Send offer to candidate,2025-03-30 06:01:00,Unknown
+1002,Get candidate reply,2025-03-30 06:37:00,Unknown
+1002,Congratulate new hre,2025-03-30 07:27:00,Unknown
+1002,Informe other candidates,2025-03-30 08:37:00,Unknown
+1002,Perform HR interview,2025-03-30 10:33:00,Unknown
+1002,Perform Manager interview,2025-03-30 11:45:00,Unknown
+1002,Inform rejection,2025-03-30 13:39:00,Unknown
+1002,Send rejection message,2025-03-30 14:16:00,Unknown
+1003,Open position,2025-03-31 22:00:00,Unknown
+1003,Publish ,2025-03-31 22:30:00,Unknown
+1003,Distribute on job boards,2025-03-31 23:04:00,HR
+1003,Advertise on social media,2025-04-01 00:21:00,Unknown
+1003,Retrieve applications,2025-04-01 02:17:00,Unknown
+1003,Pre-select candidates for interview,2025-04-01 03:33:00,Unknown
+1003,Select candidate for offer,2025-04-01 05:32:00,Unknown
+1003,Prepare offer,2025-04-01 06:44:00,Unknown
+1003,Send offer to candidate,2025-04-01 08:30:00,Unknown
+1003,Get candidate reply,2025-04-01 10:07:00,Unknown
+1003,Congratulate new hre,2025-04-01 11:23:00,Unknown
+1003,Informe other candidates,2025-04-01 12:49:00,Unknown
+1003,Perform HR interview,2025-04-01 14:05:00,Unknown
+1003,Perform Manager interview,2025-04-01 15:33:00,Unknown
+1003,Inform rejection,2025-04-01 16:28:00,Unknown
+1003,Send rejection message,2025-04-01 17:44:00,Unknown
+1004,Open position,2025-03-29 22:00:00,Unknown
+1004,Publish ,2025-03-29 22:50:00,Unknown
+1004,Distribute on job boards,2025-03-29 23:38:00,HR
+1004,Advertise on social media,2025-03-30 01:34:00,Unknown
+1004,Retrieve applications,2025-03-30 02:26:00,Unknown
+1004,Pre-select candidates for interview,2025-03-30 03:09:00,Unknown
+1004,Select candidate for offer,2025-03-30 05:06:00,Unknown
+1004,Prepare offer,2025-03-30 06:48:00,Unknown
+1004,Send offer to candidate,2025-03-30 08:07:00,Unknown
+1004,Get candidate reply,2025-03-30 08:58:00,Unknown
+1004,Congratulate new hre,2025-03-30 10:37:00,Unknown
+1004,Informe other candidates,2025-03-30 12:17:00,Unknown
+1004,Perform HR interview,2025-03-30 13:24:00,Unknown
+1004,Perform Manager interview,2025-03-30 14:33:00,Unknown
+1004,Inform rejection,2025-03-30 15:55:00,Unknown
+1004,Send rejection message,2025-03-30 17:48:00,Unknown
+1005,Open position,2025-03-31 22:00:00,Unknown
+1005,Publish ,2025-03-31 22:37:00,Unknown
+1005,Distribute on job boards,2025-04-01 00:34:00,HR
+1005,Advertise on social media,2025-04-01 02:22:00,Unknown
+1005,Retrieve applications,2025-04-01 03:32:00,Unknown
+1005,Pre-select candidates for interview,2025-04-01 04:43:00,Unknown
+1005,Select candidate for offer,2025-04-01 06:34:00,Unknown
+1005,Prepare offer,2025-04-01 07:59:00,Unknown
+1005,Send offer to candidate,2025-04-01 09:19:00,Unknown
+1005,Get candidate reply,2025-04-01 10:09:00,Unknown
+1005,Congratulate new hre,2025-04-01 11:33:00,Unknown
+1005,Informe other candidates,2025-04-01 12:51:00,Unknown
+1005,Perform HR interview,2025-04-01 13:50:00,Unknown
+1005,Perform Manager interview,2025-04-01 14:50:00,Unknown
+1005,Inform rejection,2025-04-01 15:21:00,Unknown
+1005,Send rejection message,2025-04-01 17:05:00,Unknown
+1006,Open position,2025-03-28 22:00:00,Unknown
+1006,Publish ,2025-03-28 23:37:00,Unknown
+1006,Distribute on job boards,2025-03-29 01:29:00,HR
+1006,Advertise on social media,2025-03-29 02:29:00,Unknown
+1006,Retrieve applications,2025-03-29 03:04:00,Unknown
+1006,Pre-select candidates for interview,2025-03-29 04:54:00,Unknown
+1006,Select candidate for offer,2025-03-29 05:24:00,Unknown
+1006,Prepare offer,2025-03-29 06:01:00,Unknown
+1006,Send offer to candidate,2025-03-29 07:13:00,Unknown
+1006,Get candidate reply,2025-03-29 08:16:00,Unknown
+1006,Congratulate new hre,2025-03-29 09:49:00,Unknown
+1006,Informe other candidates,2025-03-29 11:44:00,Unknown
+1006,Perform HR interview,2025-03-29 12:32:00,Unknown
+1006,Perform Manager interview,2025-03-29 13:52:00,Unknown
+1006,Inform rejection,2025-03-29 14:33:00,Unknown
+1006,Send rejection message,2025-03-29 15:15:00,Unknown
+1007,Open position,2025-03-28 22:00:00,Unknown
+1007,Publish ,2025-03-28 23:24:00,Unknown
+1007,Distribute on job boards,2025-03-29 00:14:00,HR
+1007,Advertise on social media,2025-03-29 01:07:00,Unknown
+1007,Retrieve applications,2025-03-29 02:13:00,Unknown
+1007,Pre-select candidates for interview,2025-03-29 03:55:00,Unknown
+1007,Select candidate for offer,2025-03-29 04:35:00,Unknown
+1007,Prepare offer,2025-03-29 05:32:00,Unknown
+1007,Send offer to candidate,2025-03-29 06:16:00,Unknown
+1007,Get candidate reply,2025-03-29 07:41:00,Unknown
+1007,Congratulate new hre,2025-03-29 08:29:00,Unknown
+1007,Informe other candidates,2025-03-29 09:27:00,Unknown
+1007,Perform HR interview,2025-03-29 09:59:00,Unknown
+1007,Perform Manager interview,2025-03-29 10:29:00,Unknown
+1007,Inform rejection,2025-03-29 11:47:00,Unknown
+1007,Send rejection message,2025-03-29 13:20:00,Unknown
+1008,Open position,2025-03-30 22:00:00,Unknown
+1008,Publish ,2025-03-30 23:43:00,Unknown
+1008,Distribute on job boards,2025-03-31 01:33:00,HR
+1008,Advertise on social media,2025-03-31 02:26:00,Unknown
+1008,Retrieve applications,2025-03-31 03:29:00,Unknown
+1008,Pre-select candidates for interview,2025-03-31 04:39:00,Unknown
+1008,Select candidate for offer,2025-03-31 06:07:00,Unknown
+1008,Prepare offer,2025-03-31 06:49:00,Unknown
+1008,Send offer to candidate,2025-03-31 08:12:00,Unknown
+1008,Get candidate reply,2025-03-31 09:29:00,Unknown
+1008,Congratulate new hre,2025-03-31 10:51:00,Unknown
+1008,Informe other candidates,2025-03-31 11:32:00,Unknown
+1008,Perform HR interview,2025-03-31 12:28:00,Unknown
+1008,Perform Manager interview,2025-03-31 13:32:00,Unknown
+1008,Inform rejection,2025-03-31 14:20:00,Unknown
+1008,Send rejection message,2025-03-31 15:08:00,Unknown
+1009,Open position,2025-03-31 22:00:00,Unknown
+1009,Publish ,2025-03-31 23:33:00,Unknown
+1009,Distribute on job boards,2025-04-01 01:33:00,HR
+1009,Advertise on social media,2025-04-01 02:42:00,Unknown
+1009,Retrieve applications,2025-04-01 03:15:00,Unknown
+1009,Pre-select candidates for interview,2025-04-01 04:37:00,Unknown
+1009,Select candidate for offer,2025-04-01 05:07:00,Unknown
+1009,Prepare offer,2025-04-01 06:06:00,Unknown
+1009,Send offer to candidate,2025-04-01 07:02:00,Unknown
+1009,Get candidate reply,2025-04-01 07:42:00,Unknown
+1009,Congratulate new hre,2025-04-01 08:26:00,Unknown
+1009,Informe other candidates,2025-04-01 10:12:00,Unknown
+1009,Perform HR interview,2025-04-01 11:33:00,Unknown
+1009,Perform Manager interview,2025-04-01 13:05:00,Unknown
+1009,Inform rejection,2025-04-01 14:17:00,Unknown
+1009,Send rejection message,2025-04-01 15:12:00,Unknown
+1010,Open position,2025-03-26 22:00:00,Unknown
+1010,Publish ,2025-03-26 23:27:00,Unknown
+1010,Distribute on job boards,2025-03-27 00:17:00,HR
+1010,Advertise on social media,2025-03-27 01:33:00,Unknown
+1010,Retrieve applications,2025-03-27 02:32:00,Unknown
+1010,Pre-select candidates for interview,2025-03-27 03:20:00,Unknown
+1010,Select candidate for offer,2025-03-27 03:58:00,Unknown
+1010,Prepare offer,2025-03-27 05:35:00,Unknown
+1010,Send offer to candidate,2025-03-27 06:10:00,Unknown
+1010,Get candidate reply,2025-03-27 08:00:00,Unknown
+1010,Congratulate new hre,2025-03-27 09:01:00,Unknown
+1010,Informe other candidates,2025-03-27 10:12:00,Unknown
+1010,Perform HR interview,2025-03-27 11:54:00,Unknown
+1010,Perform Manager interview,2025-03-27 13:06:00,Unknown
+1010,Inform rejection,2025-03-27 14:34:00,Unknown
+1010,Send rejection message,2025-03-27 15:22:00,Unknown
