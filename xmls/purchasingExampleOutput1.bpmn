@@ -1,0 +1,519 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:definitions xmlns:ns0="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://apromore.org" xmlns:ns3="http://www.qbp-simulator.com/Schema201212" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns5="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns6="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.omg.org/bpmn20" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+  <ns0:process id="proc_626093494">
+    <ns0:startEvent id="node6" name="">
+      <ns0:outgoing>edge3</ns0:outgoing>
+    </ns0:startEvent>
+    <ns0:endEvent id="node18" name="">
+      <ns0:incoming>edge6</ns0:incoming>
+    </ns0:endEvent>
+    <ns0:task ns2:aux-font-size="16px" id="node0" name="Release Purchase Order">
+      <ns0:incoming>edge13</ns0:incoming>
+      <ns0:outgoing>edge7</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node1" name="Send Request for Quotation to Supplier">
+      <ns0:incoming>edge21</ns0:incoming>
+      <ns0:outgoing>edge1</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node4" name="Release Supplier's Invoice">
+      <ns0:incoming>edge8</ns0:incoming>
+      <ns0:outgoing>edge4</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node5" name="Send Invoice">
+      <ns0:incoming>edge0</ns0:incoming>
+      <ns0:outgoing>edge8</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node7" name="Create Purchase Order">
+      <ns0:incoming>edge2</ns0:incoming>
+      <ns0:outgoing>edge14</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node9" name="Analyze Request for Quotation">
+      <ns0:incoming>edge22</ns0:incoming>
+      <ns0:outgoing>edge19</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node10" name="Confirm Purchase Order">
+      <ns0:incoming>edge14</ns0:incoming>
+      <ns0:outgoing>edge15</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node11" name="Choose best option">
+      <ns0:incoming>edge5</ns0:incoming>
+      <ns0:outgoing>edge10</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node12" name="Approve Purchase Order for payment">
+      <ns0:incoming>edge7</ns0:incoming>
+      <ns0:outgoing>edge0</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node13" name="Amend Request for Quotation">
+      <ns0:incoming>edge20</ns0:incoming>
+      <ns0:outgoing>edge23</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node14" name="Settle Conditions With Supplier">
+      <ns0:incoming>edge10</ns0:incoming>
+      <ns0:outgoing>edge2</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node15" name="Create Purchase Requisition">
+      <ns0:incoming>edge3</ns0:incoming>
+      <ns0:outgoing>edge27</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node16" name="Deliver Goods Services">
+      <ns0:incoming>edge15</ns0:incoming>
+      <ns0:outgoing>edge13</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node17" name="Amend Purchase Requisition">
+      <ns0:incoming>edge18</ns0:incoming>
+      <ns0:outgoing>edge26</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node19" name="Analyze Purchase Requisition">
+      <ns0:incoming>edge25</ns0:incoming>
+      <ns0:outgoing>edge16</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node20" name="Pay Invoice">
+      <ns0:incoming>edge12</ns0:incoming>
+      <ns0:outgoing>edge6</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node21" name="Create Request for Quotation">
+      <ns0:incoming>edge17</ns0:incoming>
+      <ns0:outgoing>edge24</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node22" name="Authorize Supplier's Invoice payment">
+      <ns0:incoming>edge11</ns0:incoming>
+      <ns0:outgoing>edge12</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node23" name="Settle Dispute With Supplier">
+      <ns0:incoming>edge4</ns0:incoming>
+      <ns0:outgoing>edge11</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node24" name="Create Quotation comparison Map">
+      <ns0:incoming>edge1</ns0:incoming>
+      <ns0:outgoing>edge9</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node25" name="Analyze Quotation Comparison Map">
+      <ns0:incoming>edge9</ns0:incoming>
+      <ns0:outgoing>edge5</ns0:outgoing>
+    </ns0:task>
+    <ns0:exclusiveGateway id="node2" name="">
+      <ns0:incoming>edge16</ns0:incoming>
+      <ns0:outgoing>edge17</ns0:outgoing>
+      <ns0:outgoing>edge18</ns0:outgoing>
+    </ns0:exclusiveGateway>
+    <ns0:exclusiveGateway id="node3" name="">
+      <ns0:incoming>edge23</ns0:incoming>
+      <ns0:incoming>edge24</ns0:incoming>
+      <ns0:outgoing>edge22</ns0:outgoing>
+    </ns0:exclusiveGateway>
+    <ns0:exclusiveGateway id="node8" name="">
+      <ns0:incoming>edge26</ns0:incoming>
+      <ns0:incoming>edge27</ns0:incoming>
+      <ns0:outgoing>edge25</ns0:outgoing>
+    </ns0:exclusiveGateway>
+    <ns0:exclusiveGateway id="node26" name="">
+      <ns0:incoming>edge19</ns0:incoming>
+      <ns0:outgoing>edge20</ns0:outgoing>
+      <ns0:outgoing>edge21</ns0:outgoing>
+    </ns0:exclusiveGateway>
+    <ns0:sequenceFlow id="edge0" name="" sourceRef="node12" targetRef="node5" />
+    <ns0:sequenceFlow id="edge1" name="" sourceRef="node1" targetRef="node24" />
+    <ns0:sequenceFlow id="edge2" name="" sourceRef="node14" targetRef="node7" />
+    <ns0:sequenceFlow id="edge3" name="" sourceRef="node6" targetRef="node15" />
+    <ns0:sequenceFlow id="edge4" name="" sourceRef="node4" targetRef="node23" />
+    <ns0:sequenceFlow id="edge5" name="" sourceRef="node25" targetRef="node11" />
+    <ns0:sequenceFlow id="edge6" name="" sourceRef="node20" targetRef="node18" />
+    <ns0:sequenceFlow id="edge7" name="" sourceRef="node0" targetRef="node12" />
+    <ns0:sequenceFlow id="edge8" name="" sourceRef="node5" targetRef="node4" />
+    <ns0:sequenceFlow id="edge9" name="" sourceRef="node24" targetRef="node25" />
+    <ns0:sequenceFlow id="edge10" name="" sourceRef="node11" targetRef="node14" />
+    <ns0:sequenceFlow id="edge11" name="" sourceRef="node23" targetRef="node22" />
+    <ns0:sequenceFlow id="edge12" name="" sourceRef="node22" targetRef="node20" />
+    <ns0:sequenceFlow id="edge13" name="" sourceRef="node16" targetRef="node0" />
+    <ns0:sequenceFlow id="edge14" name="" sourceRef="node7" targetRef="node10" />
+    <ns0:sequenceFlow id="edge15" name="" sourceRef="node10" targetRef="node16" />
+    <ns0:sequenceFlow id="edge16" name="" sourceRef="node19" targetRef="node2" />
+    <ns0:sequenceFlow id="edge17" name="" sourceRef="node2" targetRef="node21" />
+    <ns0:sequenceFlow id="edge18" name="" sourceRef="node2" targetRef="node17" />
+    <ns0:sequenceFlow id="edge19" name="" sourceRef="node9" targetRef="node26" />
+    <ns0:sequenceFlow id="edge20" name="" sourceRef="node26" targetRef="node13" />
+    <ns0:sequenceFlow id="edge21" name="" sourceRef="node26" targetRef="node1" />
+    <ns0:sequenceFlow id="edge22" name="" sourceRef="node3" targetRef="node9" />
+    <ns0:sequenceFlow id="edge23" name="" sourceRef="node13" targetRef="node3" />
+    <ns0:sequenceFlow id="edge24" name="" sourceRef="node21" targetRef="node3" />
+    <ns0:sequenceFlow id="edge25" name="" sourceRef="node8" targetRef="node19" />
+    <ns0:sequenceFlow id="edge26" name="" sourceRef="node17" targetRef="node8" />
+    <ns0:sequenceFlow id="edge27" name="" sourceRef="node15" targetRef="node8" />
+    <ns0:extensionElements>
+      <ns3:processSimulationInfo id="qbp_ene06fce0e-d73a-4924-9e61-dc7c754747fa" processInstances="608" currency="AUD" startDateTime="2010-12-31T23:00:00Z" useConstantSeed="true" maxBranchingProbabilityDeviation="0.01">
+        <ns3:errors />
+        <ns3:arrivalRateDistribution mean="0.00" arg1="0.00" arg2="0.00">
+          <ns3:byTimetable>
+            <ns3:distribution timetableId="CUSTOM_TIMETABLE" type="EXPONENTIAL" mean="0.00" arg1="40599.04" arg2="0.00">
+              <ns3:timeUnit>hours</ns3:timeUnit>
+            </ns3:distribution>
+          </ns3:byTimetable>
+        </ns3:arrivalRateDistribution>
+        <ns3:elements>
+          <ns3:element elementId="node20">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="240.00" arg2="900.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_6dc834ef-14e8-47fb-9267-830578a0ca86</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node10">
+            <ns3:durationDistribution type="EXPONENTIAL" mean="0.00" arg1="1179.81" arg2="0.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_7004401f-83c4-45f2-bc58-913fc970aa0b</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node21">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="60.00" arg2="960.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_b0d73408-41cd-4a5d-b7ec-471aaa3a3b2a</ns3:resourceId>
+              <ns3:resourceId>QBP_4b7b4b83-125d-4af5-a853-2959046e7959</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node11">
+            <ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00">
+              <ns3:timeUnit>seconds</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_b0d73408-41cd-4a5d-b7ec-471aaa3a3b2a</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node22">
+            <ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00">
+              <ns3:timeUnit>seconds</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_6dc834ef-14e8-47fb-9267-830578a0ca86</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node12">
+            <ns3:durationDistribution type="FIXED" mean="60.00" arg1="0.00" arg2="0.00">
+              <ns3:timeUnit>seconds</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_0812b98b-40f3-491c-a951-8f99c0dc037e</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node23">
+            <ns3:durationDistribution type="EXPONENTIAL" mean="0.00" arg1="9221.32" arg2="0.00">
+              <ns3:timeUnit>hours</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_0812b98b-40f3-491c-a951-8f99c0dc037e</ns3:resourceId>
+              <ns3:resourceId>QBP_6dc834ef-14e8-47fb-9267-830578a0ca86</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node13">
+            <ns3:durationDistribution type="EXPONENTIAL" mean="0.00" arg1="639.43" arg2="0.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_b0d73408-41cd-4a5d-b7ec-471aaa3a3b2a</ns3:resourceId>
+              <ns3:resourceId>QBP_4b7b4b83-125d-4af5-a853-2959046e7959</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node24">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="2280.00" arg2="21900.00">
+              <ns3:timeUnit>hours</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_0812b98b-40f3-491c-a951-8f99c0dc037e</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node14">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="14220.00" arg2="52740.00">
+              <ns3:timeUnit>hours</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_0812b98b-40f3-491c-a951-8f99c0dc037e</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node25">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="360.00" arg2="2040.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_b0d73408-41cd-4a5d-b7ec-471aaa3a3b2a</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node15">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="300.00" arg2="3420.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_b0d73408-41cd-4a5d-b7ec-471aaa3a3b2a</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node16">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="10980.00" arg2="176640.00">
+              <ns3:timeUnit>hours</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_7004401f-83c4-45f2-bc58-913fc970aa0b</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node17">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="1380.00" arg2="1920.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_b0d73408-41cd-4a5d-b7ec-471aaa3a3b2a</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node19">
+            <ns3:durationDistribution type="EXPONENTIAL" mean="0.00" arg1="385.45" arg2="0.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_4b7b4b83-125d-4af5-a853-2959046e7959</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node0">
+            <ns3:durationDistribution type="FIXED" mean="60.00" arg1="0.00" arg2="0.00">
+              <ns3:timeUnit>seconds</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_b0d73408-41cd-4a5d-b7ec-471aaa3a3b2a</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node1">
+            <ns3:durationDistribution type="EXPONENTIAL" mean="0.00" arg1="1407.02" arg2="0.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_0812b98b-40f3-491c-a951-8f99c0dc037e</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node4">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="120.00" arg2="420.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_6dc834ef-14e8-47fb-9267-830578a0ca86</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node5">
+            <ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00">
+              <ns3:timeUnit>seconds</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_7004401f-83c4-45f2-bc58-913fc970aa0b</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node9">
+            <ns3:durationDistribution type="NORMAL" mean="1382.01" arg1="511.16" arg2="0.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_0812b98b-40f3-491c-a951-8f99c0dc037e</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node7">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="360.00" arg2="780.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_0812b98b-40f3-491c-a951-8f99c0dc037e</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+        </ns3:elements>
+        <ns3:timetables>
+          <ns3:timetable id="CUSTOM_TIMETABLE" default="true" name="24/7">
+            <ns3:rules>
+              <ns3:rule id="77d57afe-eb95-4c21-aeb2-a1da47a65246" name="Default Timeslot" fromTime="00:00:00.000" toTime="23:59:59.999" fromWeekDay="MONDAY" toWeekDay="SUNDAY" />
+            </ns3:rules>
+          </ns3:timetable>
+        </ns3:timetables>
+        <ns3:resources>
+          <ns3:resource id="QBP_b0d73408-41cd-4a5d-b7ec-471aaa3a3b2a" name="Requester" timetableId="CUSTOM_TIMETABLE" totalAmount="1" costPerHour="0.0" />
+          <ns3:resource id="QBP_0812b98b-40f3-491c-a951-8f99c0dc037e" name="Purchasing Agent" timetableId="CUSTOM_TIMETABLE" totalAmount="1" costPerHour="0.0" />
+          <ns3:resource id="QBP_6dc834ef-14e8-47fb-9267-830578a0ca86" name="Financial Manager" timetableId="CUSTOM_TIMETABLE" totalAmount="1" costPerHour="0.0" />
+          <ns3:resource id="QBP_7004401f-83c4-45f2-bc58-913fc970aa0b" name="Supplier" timetableId="CUSTOM_TIMETABLE" totalAmount="2" costPerHour="0.0" />
+          <ns3:resource id="QBP_4b7b4b83-125d-4af5-a853-2959046e7959" name="Requester Manager" timetableId="CUSTOM_TIMETABLE" totalAmount="1" costPerHour="0.0" />
+        </ns3:resources>
+        <ns3:sequenceFlows>
+          <ns3:sequenceFlow elementId="edge18" executionProbability="0.0198" />
+          <ns3:sequenceFlow elementId="edge17" executionProbability="0.9802" />
+          <ns3:sequenceFlow elementId="edge22" executionProbability="1.0000" />
+          <ns3:sequenceFlow elementId="edge25" executionProbability="1.0000" />
+          <ns3:sequenceFlow elementId="edge20" executionProbability="0.5768" />
+          <ns3:sequenceFlow elementId="edge21" executionProbability="0.4232" />
+        </ns3:sequenceFlows>
+        <ns3:variables />
+      </ns3:processSimulationInfo>
+    </ns0:extensionElements>
+  <ns0:laneSet><ns0:lane id="Lane_Financial_Manager" name="Financial Manager"><ns0:flowNodeRef>node4</ns0:flowNodeRef><ns0:flowNodeRef>node22</ns0:flowNodeRef><ns0:flowNodeRef>node20</ns0:flowNodeRef><ns0:flowNodeRef>node23</ns0:flowNodeRef></ns0:lane><ns0:lane id="Lane_Purchasing_Agent" name="Purchasing Agent"><ns0:flowNodeRef>node9</ns0:flowNodeRef><ns0:flowNodeRef>node1</ns0:flowNodeRef><ns0:flowNodeRef>node24</ns0:flowNodeRef><ns0:flowNodeRef>node14</ns0:flowNodeRef><ns0:flowNodeRef>node7</ns0:flowNodeRef><ns0:flowNodeRef>node12</ns0:flowNodeRef><ns0:flowNodeRef>node23</ns0:flowNodeRef></ns0:lane><ns0:lane id="Lane_Requester" name="Requester"><ns0:flowNodeRef>node15</ns0:flowNodeRef><ns0:flowNodeRef>node21</ns0:flowNodeRef><ns0:flowNodeRef>node13</ns0:flowNodeRef><ns0:flowNodeRef>node25</ns0:flowNodeRef><ns0:flowNodeRef>node11</ns0:flowNodeRef><ns0:flowNodeRef>node0</ns0:flowNodeRef><ns0:flowNodeRef>node17</ns0:flowNodeRef></ns0:lane><ns0:lane id="Lane_Requester_Manager" name="Requester Manager"><ns0:flowNodeRef>node19</ns0:flowNodeRef><ns0:flowNodeRef>node21</ns0:flowNodeRef><ns0:flowNodeRef>node13</ns0:flowNodeRef></ns0:lane><ns0:lane id="Lane_Supplier" name="Supplier"><ns0:flowNodeRef>node10</ns0:flowNodeRef><ns0:flowNodeRef>node16</ns0:flowNodeRef><ns0:flowNodeRef>node5</ns0:flowNodeRef></ns0:lane></ns0:laneSet></ns0:process>
+  <ns4:BPMNDiagram id="id_1459746462">
+    <ns4:BPMNPlane bpmnElement="proc_626093494">
+      <ns4:BPMNShape bpmnElement="node20">
+        <ns5:Bounds height="80.0" width="100.0" x="4337.0" y="100" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="4337.0" y="100" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node17">
+        <ns5:Bounds height="80.0" width="100.0" x="837.0" y="700" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="837.0" y="700" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node15">
+        <ns5:Bounds height="80.0" width="100.0" x="137.0" y="700" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="137.0" y="700" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node6">
+        <ns5:Bounds height="36.0" width="36.0" x="1.0" y="732" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node13">
+        <ns5:Bounds height="80.0" width="100.0" x="1537.0" y="1000" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="1537.0" y="700" width="120" height="100" /><ns5:Bounds x="1537.0" y="1000" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node19">
+        <ns5:Bounds height="80.0" width="100.0" x="487.0" y="1000" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="487.0" y="1000" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node9">
+        <ns5:Bounds height="80.0" width="100.0" x="1187.0" y="400" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="1187.0" y="400" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node26">
+        <ns5:Bounds height="50.0" width="50.0" x="1387.0" y="425" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node22">
+        <ns5:Bounds height="80.0" width="100.0" x="4137.0" y="100" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="4137.0" y="100" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node25">
+        <ns5:Bounds height="80.0" width="100.0" x="1937.0" y="700" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="1937.0" y="700" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node1">
+        <ns5:Bounds height="80.0" width="100.0" x="1537.0" y="400" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="1537.0" y="400" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node10">
+        <ns5:Bounds height="80.0" width="100.0" x="2737.0" y="1300" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="2737.0" y="1300" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node11">
+        <ns5:Bounds height="80.0" width="100.0" x="2137.0" y="700" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="2137.0" y="700" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node5">
+        <ns5:Bounds height="80.0" width="100.0" x="3537.0" y="1300" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="3537.0" y="1300" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node21">
+        <ns5:Bounds height="80.0" width="100.0" x="837.0" y="1000" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="837.0" y="700" width="120" height="100" /><ns5:Bounds x="837.0" y="1000" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node24">
+        <ns5:Bounds height="80.0" width="100.0" x="1737.0" y="400" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="1737.0" y="400" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node7">
+        <ns5:Bounds height="80.0" width="100.0" x="2537.0" y="400" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="2537.0" y="400" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node8">
+        <ns5:Bounds height="50.0" width="50.0" x="337.0" y="725" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node2">
+        <ns5:Bounds height="50.0" width="50.0" x="687.0" y="1025" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node18">
+        <ns5:Bounds height="36.0" width="36.0" x="4537.0" y="132" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node0">
+        <ns5:Bounds height="80.0" width="100.0" x="3137.0" y="700" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="3137.0" y="700" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node16">
+        <ns5:Bounds height="80.0" width="100.0" x="2937.0" y="1300" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="2937.0" y="1300" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node14">
+        <ns5:Bounds height="80.0" width="100.0" x="2337.0" y="400" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="2337.0" y="400" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node12">
+        <ns5:Bounds height="80.0" width="100.0" x="3337.0" y="400" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="3337.0" y="400" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node23">
+        <ns5:Bounds height="80.0" width="100.0" x="3937.0" y="400" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="3937.0" y="100" width="120" height="100" /><ns5:Bounds x="3937.0" y="400" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node3">
+        <ns5:Bounds height="50.0" width="50.0" x="1037.0" y="1025" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node4">
+        <ns5:Bounds height="80.0" width="100.0" x="3737.0" y="100" />
+        <ns4:BPMNLabel />
+      <ns5:Bounds x="3737.0" y="100" width="120" height="100" /></ns4:BPMNShape>
+      <ns4:BPMNEdge bpmnElement="edge15">
+        <ns6:waypoint x="2837.0" y="1340.0" /><ns6:waypoint x="2937.0" y="1340.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge25">
+        <ns6:waypoint x="387.0" y="750.0" /><ns6:waypoint x="437.0" y="750.0" /><ns6:waypoint x="437.0" y="1040.0" /><ns6:waypoint x="487.0" y="1040.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge24">
+        <ns6:waypoint x="937.0" y="1040.0" /><ns6:waypoint x="987.0" y="1040.0" /><ns6:waypoint x="987.0" y="1050.0" /><ns6:waypoint x="1037.0" y="1050.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge18">
+        <ns6:waypoint x="737.0" y="1050.0" /><ns6:waypoint x="787.0" y="1050.0" /><ns6:waypoint x="787.0" y="740.0" /><ns6:waypoint x="837.0" y="740.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge0">
+        <ns6:waypoint x="3437.0" y="440.0" /><ns6:waypoint x="3487.0" y="440.0" /><ns6:waypoint x="3487.0" y="1340.0" /><ns6:waypoint x="3537.0" y="1340.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge6">
+        <ns6:waypoint x="4437.0" y="140.0" /><ns6:waypoint x="4487.0" y="140.0" /><ns6:waypoint x="4487.0" y="150.0" /><ns6:waypoint x="4537.0" y="150.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge2">
+        <ns6:waypoint x="2437.0" y="440.0" /><ns6:waypoint x="2537.0" y="440.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge21">
+        <ns6:waypoint x="1437.0" y="450.0" /><ns6:waypoint x="1487.0" y="450.0" /><ns6:waypoint x="1487.0" y="440.0" /><ns6:waypoint x="1537.0" y="440.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge14">
+        <ns6:waypoint x="2637.0" y="440.0" /><ns6:waypoint x="2687.0" y="440.0" /><ns6:waypoint x="2687.0" y="1340.0" /><ns6:waypoint x="2737.0" y="1340.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge23">
+        <ns6:waypoint x="1587.0" y="1000.0" /><ns6:waypoint x="1587.0" y="920.0" /><ns6:waypoint x="1062.0" y="920.0" /><ns6:waypoint x="1062.0" y="1025.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge27">
+        <ns6:waypoint x="237.0" y="740.0" /><ns6:waypoint x="287.0" y="740.0" /><ns6:waypoint x="287.0" y="750.0" /><ns6:waypoint x="337.0" y="750.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge9">
+        <ns6:waypoint x="1837.0" y="440.0" /><ns6:waypoint x="1887.0" y="440.0" /><ns6:waypoint x="1887.0" y="740.0" /><ns6:waypoint x="1937.0" y="740.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge20">
+        <ns6:waypoint x="1437.0" y="450.0" /><ns6:waypoint x="1487.0" y="450.0" /><ns6:waypoint x="1487.0" y="1040.0" /><ns6:waypoint x="1537.0" y="1040.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge10">
+        <ns6:waypoint x="2237.0" y="740.0" /><ns6:waypoint x="2287.0" y="740.0" /><ns6:waypoint x="2287.0" y="440.0" /><ns6:waypoint x="2337.0" y="440.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge19">
+        <ns6:waypoint x="1287.0" y="440.0" /><ns6:waypoint x="1337.0" y="440.0" /><ns6:waypoint x="1337.0" y="450.0" /><ns6:waypoint x="1387.0" y="450.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge8">
+        <ns6:waypoint x="3637.0" y="1340.0" /><ns6:waypoint x="3687.0" y="1340.0" /><ns6:waypoint x="3687.0" y="140.0" /><ns6:waypoint x="3737.0" y="140.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge3">
+        <ns6:waypoint x="37.0" y="750.0" /><ns6:waypoint x="87.0" y="750.0" /><ns6:waypoint x="87.0" y="740.0" /><ns6:waypoint x="137.0" y="740.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge16">
+        <ns6:waypoint x="587.0" y="1040.0" /><ns6:waypoint x="637.0" y="1040.0" /><ns6:waypoint x="637.0" y="1050.0" /><ns6:waypoint x="687.0" y="1050.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge4">
+        <ns6:waypoint x="3837.0" y="140.0" /><ns6:waypoint x="3887.0" y="140.0" /><ns6:waypoint x="3887.0" y="440.0" /><ns6:waypoint x="3937.0" y="440.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge22">
+        <ns6:waypoint x="1087.0" y="1050.0" /><ns6:waypoint x="1137.0" y="1050.0" /><ns6:waypoint x="1137.0" y="440.0" /><ns6:waypoint x="1187.0" y="440.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge26">
+        <ns6:waypoint x="887.0" y="700.0" /><ns6:waypoint x="887.0" y="620.0" /><ns6:waypoint x="362.0" y="620.0" /><ns6:waypoint x="362.0" y="725.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge1">
+        <ns6:waypoint x="1637.0" y="440.0" /><ns6:waypoint x="1737.0" y="440.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge13">
+        <ns6:waypoint x="3037.0" y="1340.0" /><ns6:waypoint x="3087.0" y="1340.0" /><ns6:waypoint x="3087.0" y="740.0" /><ns6:waypoint x="3137.0" y="740.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge17">
+        <ns6:waypoint x="737.0" y="1050.0" /><ns6:waypoint x="787.0" y="1050.0" /><ns6:waypoint x="787.0" y="1040.0" /><ns6:waypoint x="837.0" y="1040.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge7">
+        <ns6:waypoint x="3237.0" y="740.0" /><ns6:waypoint x="3287.0" y="740.0" /><ns6:waypoint x="3287.0" y="440.0" /><ns6:waypoint x="3337.0" y="440.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge5">
+        <ns6:waypoint x="2037.0" y="740.0" /><ns6:waypoint x="2137.0" y="740.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge11">
+        <ns6:waypoint x="4037.0" y="440.0" /><ns6:waypoint x="4087.0" y="440.0" /><ns6:waypoint x="4087.0" y="140.0" /><ns6:waypoint x="4137.0" y="140.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge12">
+        <ns6:waypoint x="4237.0" y="140.0" /><ns6:waypoint x="4337.0" y="140.0" /></ns4:BPMNEdge>
+    <ns4:BPMNShape bpmnElement="Lane_Financial_Manager"><ns5:Bounds x="0" y="0" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Purchasing_Agent"><ns5:Bounds x="0" y="300" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Requester"><ns5:Bounds x="0" y="600" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Requester_Manager"><ns5:Bounds x="0" y="900" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Supplier"><ns5:Bounds x="0" y="1200" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node2"><ns5:Bounds x="687.0" y="1000" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node3"><ns5:Bounds x="1037.0" y="1000" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node8"><ns5:Bounds x="337.0" y="700" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node26"><ns5:Bounds x="1387.0" y="400" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node6"><ns5:Bounds x="137.0" y="700" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node18"><ns5:Bounds x="4337.0" y="100" width="100" height="100" /></ns4:BPMNShape></ns4:BPMNPlane>
+  </ns4:BPMNDiagram>
+</ns0:definitions>
