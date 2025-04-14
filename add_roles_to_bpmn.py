@@ -280,5 +280,5 @@ def add_roles_to_bpmn(input_bpmn_file, output_bpmn_file, task_role_map):
     tree.write(output_bpmn_file, xml_declaration=True, encoding='UTF-8')
     print(f"Updated BPMN file saved as {output_bpmn_file}")
 
-role_tasks_mapping = role_tasks_mapping(LOGS_PATH, ["Role", "Activity"])
+role_tasks_mapping = role_tasks_mapping(LOGS_PATH, ["Resource", "Activity"])
 add_roles_to_bpmn(INPUT_PATH, OUTPUT_PATH, role_tasks_mapping)
