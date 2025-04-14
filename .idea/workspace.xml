@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="308b7deb-6690-4b0e-8cce-cdb6e2364875" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add_roles_to_bpmn.py" beforeDir="false" afterPath="$PROJECT_DIR$/add_roles_to_bpmn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/const.py" beforeDir="false" afterPath="$PROJECT_DIR$/const.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/format_xml.py" beforeDir="false" afterPath="$PROJECT_DIR$/format_xml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xmls/purchasingExampleOutput1.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/purchasingExampleOutput1.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xmls/repairExample.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/repairExample.bpmn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xmls/repairExampleOutput.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/repairExampleOutput.bpmn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +92,8 @@
       <workItem from="1744455933903" duration="8299000" />
       <workItem from="1744465749751" duration="12222000" />
       <workItem from="1744488724403" duration="1666000" />
-      <workItem from="1744642091595" duration="1381000" />
+      <workItem from="1744642091595" duration="7271000" />
+      <workItem from="1744650929218" duration="361000" />
     </task>
     <servers />
   </component>
@@ -96,9 +101,9 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MiAPB$add_roles_to_bpmn.coverage" NAME="add_roles_to_bpmn Coverage Results" MODIFIED="1744643295709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MiAPB$add_roles_to_bpmn.coverage" NAME="add_roles_to_bpmn Coverage Results" MODIFIED="1744651216219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MiAPB$tasks_roles_mapping.coverage" NAME="tasks_roles_mapping Coverage Results" MODIFIED="1744308633412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MiAPB$process_xml_input.coverage" NAME="process_xml_input Coverage Results" MODIFIED="1744210093627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MiAPB$format_xml.coverage" NAME="format_xml Coverage Results" MODIFIED="1744210125364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MiAPB$format_xml.coverage" NAME="format_xml Coverage Results" MODIFIED="1744643588978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

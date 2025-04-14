@@ -1,2 +1,313 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ns0:definitions xmlns:ns0="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://apromore.org" xmlns:ns3="http://www.qbp-simulator.com/Schema201212" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns5="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns6="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.omg.org/bpmn20" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"><ns0:process id="proc_1805547941"><ns0:startEvent id="node4" name=""><ns0:outgoing>edge4</ns0:outgoing></ns0:startEvent><ns0:endEvent id="node5" name=""><ns0:incoming>edge0</ns0:incoming></ns0:endEvent><ns0:task ns2:aux-font-size="16px" id="node0" name="Archive Repair"><ns0:incoming>edge6</ns0:incoming><ns0:outgoing>edge0</ns0:outgoing></ns0:task><ns0:task ns2:aux-font-size="16px" id="node1" name="Test Repair"><ns0:incoming>edge9</ns0:incoming><ns0:outgoing>edge5</ns0:outgoing></ns0:task><ns0:task ns2:aux-font-size="16px" id="node2" name="Register"><ns0:incoming>edge4</ns0:incoming><ns0:outgoing>edge2</ns0:outgoing></ns0:task><ns0:task ns2:aux-font-size="16px" id="node3" name="Inform User"><ns0:incoming>edge8</ns0:incoming><ns0:outgoing>edge10</ns0:outgoing></ns0:task><ns0:task ns2:aux-font-size="16px" id="node6" name="Restart Repair"><ns0:incoming>edge7</ns0:incoming><ns0:outgoing>edge1</ns0:outgoing></ns0:task><ns0:task ns2:aux-font-size="16px" id="node8" name="Analyze Defect"><ns0:incoming>edge2</ns0:incoming><ns0:outgoing>edge3</ns0:outgoing></ns0:task><ns0:task ns2:aux-font-size="16px" id="node10" name="Repair (Simple)"><ns0:incoming>edge1</ns0:incoming><ns0:outgoing>edge11</ns0:outgoing></ns0:task><ns0:task ns2:aux-font-size="16px" id="node11" name="Repair (Complex)"><ns0:incoming>edge3</ns0:incoming><ns0:outgoing>edge12</ns0:outgoing></ns0:task><ns0:exclusiveGateway id="node7" name=""><ns0:incoming>edge5</ns0:incoming><ns0:outgoing>edge6</ns0:outgoing><ns0:outgoing>edge7</ns0:outgoing><ns0:outgoing>edge8</ns0:outgoing></ns0:exclusiveGateway><ns0:exclusiveGateway id="node9" name=""><ns0:incoming>edge10</ns0:incoming><ns0:incoming>edge11</ns0:incoming><ns0:incoming>edge12</ns0:incoming><ns0:outgoing>edge9</ns0:outgoing></ns0:exclusiveGateway><ns0:sequenceFlow id="edge0" name="" sourceRef="node0" targetRef="node5" /><ns0:sequenceFlow id="edge1" name="" sourceRef="node6" targetRef="node10" /><ns0:sequenceFlow id="edge2" name="" sourceRef="node2" targetRef="node8" /><ns0:sequenceFlow id="edge3" name="" sourceRef="node8" targetRef="node11" /><ns0:sequenceFlow id="edge4" name="" sourceRef="node4" targetRef="node2" /><ns0:sequenceFlow id="edge5" name="" sourceRef="node1" targetRef="node7" /><ns0:sequenceFlow id="edge6" name="" sourceRef="node7" targetRef="node0" /><ns0:sequenceFlow id="edge7" name="" sourceRef="node7" targetRef="node6" /><ns0:sequenceFlow id="edge8" name="" sourceRef="node7" targetRef="node3" /><ns0:sequenceFlow id="edge9" name="" sourceRef="node9" targetRef="node1" /><ns0:sequenceFlow id="edge10" name="" sourceRef="node3" targetRef="node9" /><ns0:sequenceFlow id="edge11" name="" sourceRef="node10" targetRef="node9" /><ns0:sequenceFlow id="edge12" name="" sourceRef="node11" targetRef="node9" /><ns0:extensionElements><ns3:processSimulationInfo id="qbp_en4f7fbb77-b8d3-4abd-9bcd-06542d2f75b7" processInstances="1104" currency="EUR" startDateTime="1970-01-01T06:36:00Z" useConstantSeed="true" maxBranchingProbabilityDeviation="0.01"><ns3:errors /><ns3:arrivalRateDistribution mean="0.00" arg1="0.00" arg2="0.00"><ns3:byTimetable><ns3:distribution timetableId="CUSTOM_TIMETABLE" type="EXPONENTIAL" mean="0.00" arg1="1809.25" arg2="0.00"><ns3:timeUnit>minutes</ns3:timeUnit></ns3:distribution></ns3:byTimetable></ns3:arrivalRateDistribution><ns3:elements><ns3:element elementId="node10"><ns3:durationDistribution type="NORMAL" mean="600.15" arg1="270.20" arg2="0.00"><ns3:timeUnit>minutes</ns3:timeUnit></ns3:durationDistribution><ns3:resourceIds><ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId></ns3:resourceIds></ns3:element><ns3:element elementId="node2"><ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00"><ns3:timeUnit>seconds</ns3:timeUnit></ns3:durationDistribution><ns3:resourceIds><ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId></ns3:resourceIds></ns3:element><ns3:element elementId="node11"><ns3:durationDistribution type="NORMAL" mean="1381.08" arg1="826.08" arg2="0.00"><ns3:timeUnit>minutes</ns3:timeUnit></ns3:durationDistribution><ns3:resourceIds><ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId></ns3:resourceIds></ns3:element><ns3:element elementId="node3"><ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00"><ns3:timeUnit>seconds</ns3:timeUnit></ns3:durationDistribution><ns3:resourceIds><ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId></ns3:resourceIds></ns3:element><ns3:element elementId="node8"><ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="300.00" arg2="600.00"><ns3:timeUnit>minutes</ns3:timeUnit></ns3:durationDistribution><ns3:resourceIds><ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId></ns3:resourceIds></ns3:element><ns3:element elementId="node6"><ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00"><ns3:timeUnit>seconds</ns3:timeUnit></ns3:durationDistribution><ns3:resourceIds><ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId></ns3:resourceIds></ns3:element><ns3:element elementId="node0"><ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00"><ns3:timeUnit>seconds</ns3:timeUnit></ns3:durationDistribution><ns3:resourceIds><ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId></ns3:resourceIds></ns3:element><ns3:element elementId="node1"><ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="300.00" arg2="600.00"><ns3:timeUnit>minutes</ns3:timeUnit></ns3:durationDistribution><ns3:resourceIds><ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId></ns3:resourceIds></ns3:element></ns3:elements><ns3:timetables><ns3:timetable id="CUSTOM_TIMETABLE" default="true" name="24/7"><ns3:rules><ns3:rule id="67ef3e1f-97a3-48ea-9c35-c972a5926822" name="Default Timeslot" fromTime="00:00:00.000" toTime="23:59:59.999" fromWeekDay="MONDAY" toWeekDay="SUNDAY" /></ns3:rules></ns3:timetable></ns3:timetables><ns3:resources><ns3:resource id="QBP_DEFAULT_RESOURCE" name="Default" timetableId="CUSTOM_TIMETABLE" totalAmount="13" costPerHour="0.0" /></ns3:resources><ns3:sequenceFlows><ns3:sequenceFlow elementId="edge9" executionProbability="1.0000" /><ns3:sequenceFlow elementId="edge8" executionProbability="0.4394" /><ns3:sequenceFlow elementId="edge7" executionProbability="0.1619" /><ns3:sequenceFlow elementId="edge6" executionProbability="0.3987" /></ns3:sequenceFlows><ns3:variables><ns3:variable name="lifecycle:transition" type="ENUM"><ns3:enum name="complete" assignmentProbability="1.0" /></ns3:variable><ns3:variable name="(case) description" type="ENUM"><ns3:enum name="Simulated process instance" assignmentProbability="1.0" /></ns3:variable><ns3:variable name="Variant index" type="NUMERIC"><ns3:numeric type="EXPONENTIAL" mean="0.00" arg1="7.90" arg2="0.00" /></ns3:variable><ns3:variable name="Variant" type="ENUM"><ns3:enum name="Variant 40" assignmentProbability="0.01" /><ns3:enum name="Variant 48" assignmentProbability="0.01" /><ns3:enum name="Variant 47" assignmentProbability="0.01" /><ns3:enum name="Variant 46" assignmentProbability="0.01" /><ns3:enum name="Variant 45" assignmentProbability="0.01" /><ns3:enum name="Variant 44" assignmentProbability="0.01" /><ns3:enum name="Variant 43" assignmentProbability="0.01" /><ns3:enum name="Variant 42" assignmentProbability="0.01" /><ns3:enum name="Variant 41" assignmentProbability="0.01" /><ns3:enum name="Variant 39" assignmentProbability="0.01" /><ns3:enum name="Variant 38" assignmentProbability="0.01" /><ns3:enum name="Variant 51" assignmentProbability="0.01" /><ns3:enum name="Variant 50" assignmentProbability="0.01" /><ns3:enum name="Variant 15" assignmentProbability="0.02" /><ns3:enum name="Variant 59" assignmentProbability="0.01" /><ns3:enum name="Variant 14" assignmentProbability="0.02" /><ns3:enum name="Variant 58" assignmentProbability="0.01" /><ns3:enum name="Variant 13" assignmentProbability="0.02" /><ns3:enum name="Variant 57" assignmentProbability="0.01" /><ns3:enum name="Variant 12" assignmentProbability="0.02" /><ns3:enum name="Variant 56" assignmentProbability="0.01" /><ns3:enum name="Variant 11" assignmentProbability="0.02" /><ns3:enum name="Variant 55" assignmentProbability="0.01" /><ns3:enum name="Variant 10" assignmentProbability="0.02" /><ns3:enum name="Variant 54" assignmentProbability="0.01" /><ns3:enum name="Variant 53" assignmentProbability="0.01" /><ns3:enum name="Variant 52" assignmentProbability="0.01" /><ns3:enum name="Variant 8" assignmentProbability="0.03" /><ns3:enum name="Variant 7" assignmentProbability="0.03" /><ns3:enum name="Variant 9" assignmentProbability="0.03" /><ns3:enum name="Variant 4" assignmentProbability="0.08" /><ns3:enum name="Variant 3" assignmentProbability="0.1" /><ns3:enum name="Variant 6" assignmentProbability="0.03" /><ns3:enum name="Variant 49" assignmentProbability="0.01" /><ns3:enum name="Variant 5" assignmentProbability="0.07" /><ns3:enum name="Variant 2" assignmentProbability="0.18" /><ns3:enum name="Variant 1" assignmentProbability="0.1100000000000001" /><ns3:enum name="Variant 60" assignmentProbability="0.0" /><ns3:enum name="Variant 26" assignmentProbability="0.0" /><ns3:enum name="Variant 25" assignmentProbability="0.0" /><ns3:enum name="Variant 24" assignmentProbability="0.0" /><ns3:enum name="Variant 23" assignmentProbability="0.0" /><ns3:enum name="Variant 22" assignmentProbability="0.0" /><ns3:enum name="Variant 21" assignmentProbability="0.0" /><ns3:enum name="Variant 20" assignmentProbability="0.0" /><ns3:enum name="Variant 19" assignmentProbability="0.0" /><ns3:enum name="Variant 18" assignmentProbability="0.0" /><ns3:enum name="Variant 17" assignmentProbability="0.0" /><ns3:enum name="Variant 16" assignmentProbability="0.0" /><ns3:enum name="Variant 37" assignmentProbability="0.0" /><ns3:enum name="Variant 36" assignmentProbability="0.0" /><ns3:enum name="Variant 35" assignmentProbability="0.0" /><ns3:enum name="Variant 34" assignmentProbability="0.0" /><ns3:enum name="Variant 33" assignmentProbability="0.0" /><ns3:enum name="Variant 32" assignmentProbability="0.0" /><ns3:enum name="Variant 31" assignmentProbability="0.0" /><ns3:enum name="Variant 30" assignmentProbability="0.0" /><ns3:enum name="Variant 29" assignmentProbability="0.0" /><ns3:enum name="Variant 28" assignmentProbability="0.0" /><ns3:enum name="Variant 27" assignmentProbability="0.0" /></ns3:variable></ns3:variables></ns3:processSimulationInfo></ns0:extensionElements><ns0:laneSet><ns0:lane id="Lane_Solver" name="Solver"><ns0:flowNodeRef>node11</ns0:flowNodeRef><ns0:flowNodeRef>node10</ns0:flowNodeRef></ns0:lane><ns0:lane id="Lane_System" name="System"><ns0:flowNodeRef>node2</ns0:flowNodeRef><ns0:flowNodeRef>node3</ns0:flowNodeRef><ns0:flowNodeRef>node0</ns0:flowNodeRef><ns0:flowNodeRef>node6</ns0:flowNodeRef></ns0:lane><ns0:lane id="Lane_Tester" name="Tester"><ns0:flowNodeRef>node8</ns0:flowNodeRef><ns0:flowNodeRef>node1</ns0:flowNodeRef></ns0:lane></ns0:laneSet></ns0:process><ns4:BPMNDiagram id="id_305659353"><ns4:BPMNPlane bpmnElement="proc_1805547941"><ns4:BPMNShape bpmnElement="node6"><ns5:Bounds height="80.0" width="100.0" x="1237.0" y="400" /><ns4:BPMNLabel /><ns5:Bounds x="1237.0" y="400" width="120" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node8"><ns5:Bounds height="80.0" width="100.0" x="337.0" y="700" /><ns4:BPMNLabel /><ns5:Bounds x="337.0" y="700" width="120" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node7"><ns5:Bounds height="50.0" width="50.0" x="1087.0" y="725" /><ns4:BPMNLabel /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node4"><ns5:Bounds height="36.0" width="36.0" x="1.0" y="432" /><ns4:BPMNLabel /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node0"><ns5:Bounds height="80.0" width="100.0" x="1237.0" y="400" /><ns4:BPMNLabel /><ns5:Bounds x="1237.0" y="400" width="120" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node5"><ns5:Bounds height="36.0" width="36.0" x="1469.0" y="432" /><ns4:BPMNLabel /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node9"><ns5:Bounds height="50.0" width="50.0" x="737.0" y="425" /><ns4:BPMNLabel /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node2"><ns5:Bounds height="80.0" width="100.0" x="137.0" y="400" /><ns4:BPMNLabel /><ns5:Bounds x="137.0" y="400" width="120" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node11"><ns5:Bounds height="80.0" width="100.0" x="537.0" y="100" /><ns4:BPMNLabel /><ns5:Bounds x="537.0" y="100" width="120" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node1"><ns5:Bounds height="80.0" width="100.0" x="887.0" y="700" /><ns4:BPMNLabel /><ns5:Bounds x="887.0" y="700" width="120" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node10"><ns5:Bounds height="80.0" width="100.0" x="1437.0" y="100" /><ns4:BPMNLabel /><ns5:Bounds x="1437.0" y="100" width="120" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node3"><ns5:Bounds height="80.0" width="100.0" x="1237.0" y="400" /><ns4:BPMNLabel /><ns5:Bounds x="1237.0" y="400" width="120" height="100" /></ns4:BPMNShape><ns4:BPMNEdge bpmnElement="edge1"><ns6:waypoint x="1337.0" y="440.0" /><ns6:waypoint x="1387.0" y="440.0" /><ns6:waypoint x="1387.0" y="140.0" /><ns6:waypoint x="1437.0" y="140.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge12"><ns6:waypoint x="637.0" y="140.0" /><ns6:waypoint x="687.0" y="140.0" /><ns6:waypoint x="687.0" y="450.0" /><ns6:waypoint x="737.0" y="450.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge0"><ns6:waypoint x="1337.0" y="440.0" /><ns6:waypoint x="1403.0" y="440.0" /><ns6:waypoint x="1403.0" y="450.0" /><ns6:waypoint x="1469.0" y="450.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge9"><ns6:waypoint x="787.0" y="450.0" /><ns6:waypoint x="837.0" y="450.0" /><ns6:waypoint x="837.0" y="740.0" /><ns6:waypoint x="887.0" y="740.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge3"><ns6:waypoint x="437.0" y="740.0" /><ns6:waypoint x="487.0" y="740.0" /><ns6:waypoint x="487.0" y="140.0" /><ns6:waypoint x="537.0" y="140.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge10"><ns6:waypoint x="1287.0" y="400.0" /><ns6:waypoint x="1287.0" y="320.0" /><ns6:waypoint x="762.0" y="320.0" /><ns6:waypoint x="762.0" y="425.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge5"><ns6:waypoint x="987.0" y="740.0" /><ns6:waypoint x="1037.0" y="740.0" /><ns6:waypoint x="1037.0" y="750.0" /><ns6:waypoint x="1087.0" y="750.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge7"><ns6:waypoint x="1137.0" y="750.0" /><ns6:waypoint x="1187.0" y="750.0" /><ns6:waypoint x="1187.0" y="440.0" /><ns6:waypoint x="1237.0" y="440.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge11"><ns6:waypoint x="1487.0" y="100.0" /><ns6:waypoint x="1487.0" y="20.0" /><ns6:waypoint x="762.0" y="20.0" /><ns6:waypoint x="762.0" y="425.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge6"><ns6:waypoint x="1137.0" y="750.0" /><ns6:waypoint x="1187.0" y="750.0" /><ns6:waypoint x="1187.0" y="440.0" /><ns6:waypoint x="1237.0" y="440.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge4"><ns6:waypoint x="37.0" y="450.0" /><ns6:waypoint x="87.0" y="450.0" /><ns6:waypoint x="87.0" y="440.0" /><ns6:waypoint x="137.0" y="440.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge2"><ns6:waypoint x="237.0" y="440.0" /><ns6:waypoint x="287.0" y="440.0" /><ns6:waypoint x="287.0" y="740.0" /><ns6:waypoint x="337.0" y="740.0" /></ns4:BPMNEdge><ns4:BPMNEdge bpmnElement="edge8"><ns6:waypoint x="1137.0" y="750.0" /><ns6:waypoint x="1187.0" y="750.0" /><ns6:waypoint x="1187.0" y="440.0" /><ns6:waypoint x="1237.0" y="440.0" /></ns4:BPMNEdge><ns4:BPMNShape bpmnElement="Lane_Solver"><ns5:Bounds x="0" y="0" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_System"><ns5:Bounds x="0" y="300" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Tester"><ns5:Bounds x="0" y="600" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node7"><ns5:Bounds x="1087.0" y="700" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node9"><ns5:Bounds x="737.0" y="400" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node4"><ns5:Bounds x="137.0" y="400" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node5"><ns5:Bounds x="1237.0" y="400" width="100" height="100" /></ns4:BPMNShape></ns4:BPMNPlane></ns4:BPMNDiagram></ns0:definitions>
+<ns0:definitions xmlns:ns0="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://apromore.org" xmlns:ns3="http://www.qbp-simulator.com/Schema201212" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns5="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns6="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.omg.org/bpmn20" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+  <ns0:process id="proc_1805547941">
+    <ns0:startEvent id="node4" name="">
+      <ns0:outgoing>edge4</ns0:outgoing>
+    </ns0:startEvent>
+    <ns0:endEvent id="node5" name="">
+      <ns0:incoming>edge0</ns0:incoming>
+    </ns0:endEvent>
+    <ns0:task ns2:aux-font-size="16px" id="node0" name="Archive Repair">
+      <ns0:incoming>edge6</ns0:incoming>
+      <ns0:outgoing>edge0</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node1" name="Test Repair">
+      <ns0:incoming>edge9</ns0:incoming>
+      <ns0:outgoing>edge5</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node2" name="Register">
+      <ns0:incoming>edge4</ns0:incoming>
+      <ns0:outgoing>edge2</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node3" name="Inform User">
+      <ns0:incoming>edge8</ns0:incoming>
+      <ns0:outgoing>edge10</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node6" name="Restart Repair">
+      <ns0:incoming>edge7</ns0:incoming>
+      <ns0:outgoing>edge1</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node8" name="Analyze Defect">
+      <ns0:incoming>edge2</ns0:incoming>
+      <ns0:outgoing>edge3</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node10" name="Repair (Simple)">
+      <ns0:incoming>edge1</ns0:incoming>
+      <ns0:outgoing>edge11</ns0:outgoing>
+    </ns0:task>
+    <ns0:task ns2:aux-font-size="16px" id="node11" name="Repair (Complex)">
+      <ns0:incoming>edge3</ns0:incoming>
+      <ns0:outgoing>edge12</ns0:outgoing>
+    </ns0:task>
+    <ns0:exclusiveGateway id="node7" name="">
+      <ns0:incoming>edge5</ns0:incoming>
+      <ns0:outgoing>edge6</ns0:outgoing>
+      <ns0:outgoing>edge7</ns0:outgoing>
+      <ns0:outgoing>edge8</ns0:outgoing>
+    </ns0:exclusiveGateway>
+    <ns0:exclusiveGateway id="node9" name="">
+      <ns0:incoming>edge10</ns0:incoming>
+      <ns0:incoming>edge11</ns0:incoming>
+      <ns0:incoming>edge12</ns0:incoming>
+      <ns0:outgoing>edge9</ns0:outgoing>
+    </ns0:exclusiveGateway>
+    <ns0:sequenceFlow id="edge0" name="" sourceRef="node0" targetRef="node5" />
+    <ns0:sequenceFlow id="edge1" name="" sourceRef="node6" targetRef="node10" />
+    <ns0:sequenceFlow id="edge2" name="" sourceRef="node2" targetRef="node8" />
+    <ns0:sequenceFlow id="edge3" name="" sourceRef="node8" targetRef="node11" />
+    <ns0:sequenceFlow id="edge4" name="" sourceRef="node4" targetRef="node2" />
+    <ns0:sequenceFlow id="edge5" name="" sourceRef="node1" targetRef="node7" />
+    <ns0:sequenceFlow id="edge6" name="" sourceRef="node7" targetRef="node0" />
+    <ns0:sequenceFlow id="edge7" name="" sourceRef="node7" targetRef="node6" />
+    <ns0:sequenceFlow id="edge8" name="" sourceRef="node7" targetRef="node3" />
+    <ns0:sequenceFlow id="edge9" name="" sourceRef="node9" targetRef="node1" />
+    <ns0:sequenceFlow id="edge10" name="" sourceRef="node3" targetRef="node9" />
+    <ns0:sequenceFlow id="edge11" name="" sourceRef="node10" targetRef="node9" />
+    <ns0:sequenceFlow id="edge12" name="" sourceRef="node11" targetRef="node9" />
+    <ns0:extensionElements>
+      <ns3:processSimulationInfo id="qbp_en4f7fbb77-b8d3-4abd-9bcd-06542d2f75b7" processInstances="1104" currency="EUR" startDateTime="1970-01-01T06:36:00Z" useConstantSeed="true" maxBranchingProbabilityDeviation="0.01">
+        <ns3:errors />
+        <ns3:arrivalRateDistribution mean="0.00" arg1="0.00" arg2="0.00">
+          <ns3:byTimetable>
+            <ns3:distribution timetableId="CUSTOM_TIMETABLE" type="EXPONENTIAL" mean="0.00" arg1="1809.25" arg2="0.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:distribution>
+          </ns3:byTimetable>
+        </ns3:arrivalRateDistribution>
+        <ns3:elements>
+          <ns3:element elementId="node10">
+            <ns3:durationDistribution type="NORMAL" mean="600.15" arg1="270.20" arg2="0.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node2">
+            <ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00">
+              <ns3:timeUnit>seconds</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node11">
+            <ns3:durationDistribution type="NORMAL" mean="1381.08" arg1="826.08" arg2="0.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node3">
+            <ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00">
+              <ns3:timeUnit>seconds</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node8">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="300.00" arg2="600.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node6">
+            <ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00">
+              <ns3:timeUnit>seconds</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node0">
+            <ns3:durationDistribution type="FIXED" mean="0.00" arg1="0.00" arg2="0.00">
+              <ns3:timeUnit>seconds</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+          <ns3:element elementId="node1">
+            <ns3:durationDistribution type="UNIFORM" mean="0.00" arg1="300.00" arg2="600.00">
+              <ns3:timeUnit>minutes</ns3:timeUnit>
+            </ns3:durationDistribution>
+            <ns3:resourceIds>
+              <ns3:resourceId>QBP_DEFAULT_RESOURCE</ns3:resourceId>
+            </ns3:resourceIds>
+          </ns3:element>
+        </ns3:elements>
+        <ns3:timetables>
+          <ns3:timetable id="CUSTOM_TIMETABLE" default="true" name="24/7">
+            <ns3:rules>
+              <ns3:rule id="67ef3e1f-97a3-48ea-9c35-c972a5926822" name="Default Timeslot" fromTime="00:00:00.000" toTime="23:59:59.999" fromWeekDay="MONDAY" toWeekDay="SUNDAY" />
+            </ns3:rules>
+          </ns3:timetable>
+        </ns3:timetables>
+        <ns3:resources>
+          <ns3:resource id="QBP_DEFAULT_RESOURCE" name="Default" timetableId="CUSTOM_TIMETABLE" totalAmount="13" costPerHour="0.0" />
+        </ns3:resources>
+        <ns3:sequenceFlows>
+          <ns3:sequenceFlow elementId="edge9" executionProbability="1.0000" />
+          <ns3:sequenceFlow elementId="edge8" executionProbability="0.4394" />
+          <ns3:sequenceFlow elementId="edge7" executionProbability="0.1619" />
+          <ns3:sequenceFlow elementId="edge6" executionProbability="0.3987" />
+        </ns3:sequenceFlows>
+        <ns3:variables>
+          <ns3:variable name="lifecycle:transition" type="ENUM">
+            <ns3:enum name="complete" assignmentProbability="1.0" />
+          </ns3:variable>
+          <ns3:variable name="(case) description" type="ENUM">
+            <ns3:enum name="Simulated process instance" assignmentProbability="1.0" />
+          </ns3:variable>
+          <ns3:variable name="Variant index" type="NUMERIC">
+            <ns3:numeric type="EXPONENTIAL" mean="0.00" arg1="7.90" arg2="0.00" />
+          </ns3:variable>
+          <ns3:variable name="Variant" type="ENUM">
+            <ns3:enum name="Variant 40" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 48" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 47" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 46" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 45" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 44" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 43" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 42" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 41" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 39" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 38" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 51" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 50" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 15" assignmentProbability="0.02" />
+            <ns3:enum name="Variant 59" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 14" assignmentProbability="0.02" />
+            <ns3:enum name="Variant 58" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 13" assignmentProbability="0.02" />
+            <ns3:enum name="Variant 57" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 12" assignmentProbability="0.02" />
+            <ns3:enum name="Variant 56" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 11" assignmentProbability="0.02" />
+            <ns3:enum name="Variant 55" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 10" assignmentProbability="0.02" />
+            <ns3:enum name="Variant 54" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 53" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 52" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 8" assignmentProbability="0.03" />
+            <ns3:enum name="Variant 7" assignmentProbability="0.03" />
+            <ns3:enum name="Variant 9" assignmentProbability="0.03" />
+            <ns3:enum name="Variant 4" assignmentProbability="0.08" />
+            <ns3:enum name="Variant 3" assignmentProbability="0.1" />
+            <ns3:enum name="Variant 6" assignmentProbability="0.03" />
+            <ns3:enum name="Variant 49" assignmentProbability="0.01" />
+            <ns3:enum name="Variant 5" assignmentProbability="0.07" />
+            <ns3:enum name="Variant 2" assignmentProbability="0.18" />
+            <ns3:enum name="Variant 1" assignmentProbability="0.1100000000000001" />
+            <ns3:enum name="Variant 60" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 26" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 25" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 24" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 23" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 22" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 21" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 20" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 19" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 18" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 17" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 16" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 37" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 36" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 35" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 34" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 33" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 32" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 31" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 30" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 29" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 28" assignmentProbability="0.0" />
+            <ns3:enum name="Variant 27" assignmentProbability="0.0" />
+          </ns3:variable>
+        </ns3:variables>
+      </ns3:processSimulationInfo>
+    </ns0:extensionElements>
+  <ns0:laneSet><ns0:lane id="Lane_Solver" name="Solver"><ns0:flowNodeRef>node11</ns0:flowNodeRef><ns0:flowNodeRef>node10</ns0:flowNodeRef></ns0:lane><ns0:lane id="Lane_System" name="System"><ns0:flowNodeRef>node2</ns0:flowNodeRef><ns0:flowNodeRef>node3</ns0:flowNodeRef><ns0:flowNodeRef>node0</ns0:flowNodeRef><ns0:flowNodeRef>node6</ns0:flowNodeRef></ns0:lane><ns0:lane id="Lane_Tester" name="Tester"><ns0:flowNodeRef>node8</ns0:flowNodeRef><ns0:flowNodeRef>node1</ns0:flowNodeRef></ns0:lane></ns0:laneSet></ns0:process>
+  <ns4:BPMNDiagram id="id_305659353">
+    <ns4:BPMNPlane bpmnElement="proc_1805547941">
+      <ns4:BPMNShape bpmnElement="node6">
+        <ns5:Bounds height="80.0" width="120" x="1237.0" y="640" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node8">
+        <ns5:Bounds height="80.0" width="120" x="337.0" y="940" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node7">
+        <ns5:Bounds height="50.0" width="50.0" x="1087.0" y="965.0" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node4">
+        <ns5:Bounds height="36.0" width="36.0" x="1.0" y="432.0" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node0">
+        <ns5:Bounds height="80.0" width="120" x="1237.0" y="520" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node5">
+        <ns5:Bounds height="36.0" width="36.0" x="1469.0" y="552.0" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node9">
+        <ns5:Bounds height="50.0" width="50.0" x="737.0" y="425.0" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node2">
+        <ns5:Bounds height="80.0" width="120" x="137.0" y="400" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node11">
+        <ns5:Bounds height="80.0" width="120" x="537.0" y="100" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node1">
+        <ns5:Bounds height="80.0" width="120" x="887.0" y="940" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node10">
+        <ns5:Bounds height="80.0" width="120" x="1437.0" y="100" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNShape bpmnElement="node3">
+        <ns5:Bounds height="80.0" width="120" x="1237.0" y="400" />
+        <ns4:BPMNLabel />
+      </ns4:BPMNShape>
+      <ns4:BPMNEdge bpmnElement="edge1">
+        <ns6:waypoint x="1357.0" y="680.0" /><ns6:waypoint x="1397.0" y="680.0" /><ns6:waypoint x="1397.0" y="140.0" /><ns6:waypoint x="1437.0" y="140.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge12">
+        <ns6:waypoint x="657.0" y="140.0" /><ns6:waypoint x="697.0" y="140.0" /><ns6:waypoint x="697.0" y="450.0" /><ns6:waypoint x="737.0" y="450.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge0">
+        <ns6:waypoint x="1357.0" y="560.0" /><ns6:waypoint x="1413.0" y="560.0" /><ns6:waypoint x="1413.0" y="570.0" /><ns6:waypoint x="1469.0" y="570.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge9">
+        <ns6:waypoint x="787.0" y="450.0" /><ns6:waypoint x="837.0" y="450.0" /><ns6:waypoint x="837.0" y="980.0" /><ns6:waypoint x="887.0" y="980.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge3">
+        <ns6:waypoint x="457.0" y="980.0" /><ns6:waypoint x="497.0" y="980.0" /><ns6:waypoint x="497.0" y="140.0" /><ns6:waypoint x="537.0" y="140.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge10">
+        <ns6:waypoint x="1297.0" y="400.0" /><ns6:waypoint x="1297.0" y="320.0" /><ns6:waypoint x="762.0" y="320.0" /><ns6:waypoint x="762.0" y="425.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge5">
+        <ns6:waypoint x="1007.0" y="980.0" /><ns6:waypoint x="1047.0" y="980.0" /><ns6:waypoint x="1047.0" y="990.0" /><ns6:waypoint x="1087.0" y="990.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge7">
+        <ns6:waypoint x="1137.0" y="990.0" /><ns6:waypoint x="1187.0" y="990.0" /><ns6:waypoint x="1187.0" y="680.0" /><ns6:waypoint x="1237.0" y="680.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge11">
+        <ns6:waypoint x="1497.0" y="100.0" /><ns6:waypoint x="1497.0" y="20.0" /><ns6:waypoint x="762.0" y="20.0" /><ns6:waypoint x="762.0" y="425.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge6">
+        <ns6:waypoint x="1137.0" y="990.0" /><ns6:waypoint x="1187.0" y="990.0" /><ns6:waypoint x="1187.0" y="560.0" /><ns6:waypoint x="1237.0" y="560.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge4">
+        <ns6:waypoint x="37.0" y="450.0" /><ns6:waypoint x="87.0" y="450.0" /><ns6:waypoint x="87.0" y="440.0" /><ns6:waypoint x="137.0" y="440.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge2">
+        <ns6:waypoint x="257.0" y="440.0" /><ns6:waypoint x="297.0" y="440.0" /><ns6:waypoint x="297.0" y="980.0" /><ns6:waypoint x="337.0" y="980.0" /></ns4:BPMNEdge>
+      <ns4:BPMNEdge bpmnElement="edge8">
+        <ns6:waypoint x="1137.0" y="990.0" /><ns6:waypoint x="1187.0" y="990.0" /><ns6:waypoint x="1187.0" y="440.0" /><ns6:waypoint x="1237.0" y="440.0" /></ns4:BPMNEdge>
+    <ns4:BPMNShape bpmnElement="Lane_Solver"><ns5:Bounds x="0" y="0" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_System"><ns5:Bounds x="0" y="300" width="5000" height="540" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Tester"><ns5:Bounds x="0" y="840" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node7"><ns5:Bounds x="1087.0" y="940.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node9"><ns5:Bounds x="737.0" y="400.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node4"><ns5:Bounds x="137.0" y="400.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node5"><ns5:Bounds x="1237.0" y="520.0" width="100" height="100" /></ns4:BPMNShape></ns4:BPMNPlane>
+  </ns4:BPMNDiagram>
+</ns0:definitions>

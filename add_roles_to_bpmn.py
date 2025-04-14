@@ -34,6 +34,7 @@ def adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set):
     y_position = 0
 
     for role, task_list in task_role_map.items():
+        print(role, task_list)
         role_id = f"Lane_{role.replace(' ', '_')}"
 
         lane = ET.SubElement(lane_set, f"{{{NS['bpmn']}}}lane", {"id": role_id, "name": role})
@@ -42,12 +43,12 @@ def adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set):
         lane_shape = ET.SubElement(bpmn_plane, f"{{{NS['bpmndi']}}}BPMNShape", {
             "bpmnElement": lane.get('id')
         })
-        ET.SubElement(lane_shape, f"{{{NS['omgdc']}}}Bounds", {
-            "x": "0", "y": str(y_position),
-            "width": "5000", "height": "300"
-        })
+
+        lane_width = 300
 
         lane_y_position = y_position + 100
+
+        task_positions_dict = {}
 
         for task_name in task_list:
             task_id = None
@@ -57,32 +58,38 @@ def adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set):
                 if task.get('name') == task_name:
                     task_id = task.get('id')
                     task_x_position = task_positions[task_id][1]
+                    if task_x_position not in task_positions_dict:
+                        task_positions_dict[task_x_position] = []
+                    task_positions_dict[task_x_position].append(task_id)
                     break
+
+            task_indices = {}
+            for x, tasks_with_the_same_x in task_positions_dict.items():
+                for idx, t in enumerate(tasks_with_the_same_x):
+                    task_indices[t] = idx
+            print(task_indices)
+            max_vertical_tasks = max(task_indices.values()) + 1
+            print(max_vertical_tasks)
+
+            lane_width = 300 + (max_vertical_tasks - 1) * 120
 
             if task_id:
                 task_shape = bpmn_plane.find(f".//{{{NS['bpmndi']}}}BPMNShape[@bpmnElement='{task_id}']")
                 if task_shape is not None:
                     bounds = task_shape.find(f"{{{NS['omgdc']}}}Bounds")
                     if bounds is not None:
-                        bounds.set('y', str(lane_y_position))
+                        bounds.set('y', str(lane_y_position + task_indices[task_id] * 120))
+                        bounds.set('width', str(120))
 
                 flow_ref = ET.SubElement(lane, f"{{{NS['bpmn']}}}flowNodeRef")
                 flow_ref.text = task_id
 
-                if task_shape is None:
-                    task_shape = ET.SubElement(bpmn_plane, f"{{{NS['bpmndi']}}}BPMNShape", {
-                        "id": f"{task_id}_di",
-                        "bpmnElement": task_id
-                    })
 
-                ET.SubElement(task_shape, f"{{{NS['omgdc']}}}Bounds", {
-                    "x": str(task_x_position), "y": str(lane_y_position),
-                    "width": "120", "height": "100"
-                })
-
-                lane_y_position += 0
-
-        y_position += 300
+        ET.SubElement(lane_shape, f"{{{NS['omgdc']}}}Bounds", {
+            "x": "0", "y": str(y_position),
+            "width": "5000", "height": str(lane_width)
+        })
+        y_position += lane_width
 
 
 def adjust_sequence_flow_waypoints(root, bpmn_plane, NS):
@@ -199,7 +206,7 @@ def adjust_gateways(root, bpmn_plane, NS):
         source_bounds = source_shape.find(f".//{{{NS['omgdc']}}}Bounds")
         gateway_bounds = gateway_shape.find(f".//{{{NS['omgdc']}}}Bounds")
 
-        y_pos = int(source_bounds.attrib['y'])
+        y_pos = float(source_bounds.attrib['y'])
 
         x_pos = get_original_x_position(gateway_id, bpmn_plane, NS)
         gateway_bounds.attrib['y'] = str(y_pos + 25)
@@ -247,7 +254,7 @@ def adjust_events(root, bpmn_plane, NS):
         source_bounds = ref_shape.find(f".//{{{NS['omgdc']}}}Bounds")
 
         event_bounds = event_shape.find(f".//{{{NS['omgdc']}}}Bounds")
-        y_pos = int(source_bounds.attrib['y'])
+        y_pos = float(source_bounds.attrib['y'])
         x_pos = get_original_x_position(ref_id, bpmn_plane, NS)
         event_bounds.attrib['y'] = str(y_pos + 32)
 
