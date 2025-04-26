@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import BpmnViewer from 'bpmn-js/lib/Viewer';
+import NavigatedViewer from 'bpmn-js/lib/NavigatedViewer';
 import { CircularProgress, Box, Typography, Grid, Button } from '@mui/material';
 
 const BpmnViewerComponent: React.FC<{ bpmnXml: string }> = ({ bpmnXml }) => {
@@ -8,28 +8,35 @@ const BpmnViewerComponent: React.FC<{ bpmnXml: string }> = ({ bpmnXml }) => {
   const [viewer, setViewer] = useState<any>(null);
 
   useEffect(() => {
-    const newViewer = new BpmnViewer({
+    if (!containerRef.current) return;
+    const newViewer = new NavigatedViewer({
       container: containerRef.current,
-      additionalModules: [
-        {
-          zoomScroll: {
-            minZoom: 0.1,
-            maxZoom: 2.0,
-            scroll: true,
-          },
-          dragMove: {
-            maxScale: 2,
-          },
-        },
-      ],
     });
 
     newViewer
       .importXML(bpmnXml)
       .then(() => {
         setLoading(false);
-        const canvas = newViewer.get('canvas');
+        const canvas = newViewer.get('canvas') as any;
+
+        const svg = canvas.getContainer().querySelector('svg');
+        if (svg) {
+          svg.style.background = '#ffffff';
+        }
         canvas.zoom('fit-viewport');
+
+        const modeling = newViewer.get('modeling') as any;
+        const elementRegistry = newViewer.get('elementRegistry') as any;
+
+        elementRegistry.filter((element: any) => element.businessObject.$type === 'bpmn:Task')
+          .forEach((task: any) => {
+            modeling.setColor(task, {
+              fill: '#ffd700',
+              stroke: '#ff0000'
+            });
+          });
+
+
       })
       .catch((err: Error | null) => {
         console.error('Error rendering BPMN:', err);

@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import {Typography, Box, CircularProgress} from "@mui/material";
+import {Typography, Box, CircularProgress, Button} from "@mui/material";
 import BpmnViewerComponent from '../components/BPMNViewer';
 
 
 
-const HomePage: React.FC = ({}) => {
+const BPMNVisualisation: React.FC = ({}) => {
     const [bpmnXml, setBpmnXml] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -39,16 +39,29 @@ const HomePage: React.FC = ({}) => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          marginTop: '480px',
           padding: 2,
         }}
       >
         <Typography variant="h5" gutterBottom fontWeight="bold">
-          THIS PAGE WILL BE UPDATED
+          BPMN File Upload
         </Typography>
-
+        <Typography variant="body2" sx={{fontSize: '0.875rem', textAlign: "center"}}>
+            You can preview any .bpmn model here - both with and without roles.<br/>
+            Use this option to compare the original model with the roles added one.
+        </Typography>
+        <Button variant="contained" component="label" sx={{marginTop: 1}}>
+            Upload BPMN
+        <input type="file" hidden accept=".bpmn" onChange={handleFileUpload} />
+        </Button>
+        <Box sx={{ marginTop: 4, width: '100%' }}>
+          {loading ? (
+            <CircularProgress sx={{ marginTop: 2 }} />
+          ) : (
+            <BpmnViewerComponent bpmnXml={bpmnXml} />
+          )}
+        </Box>
       </Box>
   );
 };
 
-export default HomePage;
+export default BPMNVisualisation;
