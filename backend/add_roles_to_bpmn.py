@@ -1,6 +1,8 @@
 from tasks_roles_mapping import role_tasks_mapping
 import xml.etree.ElementTree as ET
 from const import NS, INPUT_PATH, OUTPUT_PATH, LOGS_PATH
+from typing import Union
+import tempfile
 
 
 def get_original_x_position(element_id, bpmn_plane, NS):
@@ -34,7 +36,6 @@ def adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set):
     y_position = 0
 
     for role, task_list in task_role_map.items():
-        print(role, task_list)
         role_id = f"Lane_{role.replace(' ', '_')}"
 
         lane = ET.SubElement(lane_set, f"{{{NS['bpmn']}}}lane", {"id": role_id, "name": role})
@@ -67,9 +68,7 @@ def adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set):
             for x, tasks_with_the_same_x in task_positions_dict.items():
                 for idx, t in enumerate(tasks_with_the_same_x):
                     task_indices[t] = idx
-            print(task_indices)
             max_vertical_tasks = max(task_indices.values()) + 1
-            print(max_vertical_tasks)
 
             lane_width = 300 + (max_vertical_tasks - 1) * 120
 
@@ -267,25 +266,66 @@ def adjust_events(root, bpmn_plane, NS):
             "width": "100", "height": "100"
         })
 
-def add_roles_to_bpmn(input_bpmn_file, output_bpmn_file, task_role_map):
-    tree = ET.parse(input_bpmn_file)
-    root = tree.getroot()
-    process = root.find(f".//{{{NS['bpmn']}}}process")
-    bpmn_plane = root.find(f".//{{{NS['bpmndi']}}}BPMNPlane")
-    if bpmn_plane is None:
-        bpmn_plane = ET.SubElement(root, f"{{{NS['bpmndi']}}}BPMNPlane", {"bpmnElement": process.get('id')})
-    lane_set = ET.SubElement(process, f"{{{NS['bpmn']}}}laneSet")
 
-    adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set)
+def save_bytes_to_temp_file(file_bytes: bytes) -> str:
+    temp_file = tempfile.NamedTemporaryFile(delete=False)
+    temp_file.write(file_bytes)
+    temp_file.close()
+    return temp_file.name
 
-    adjust_gateways(root, bpmn_plane, NS)
 
-    adjust_events(root, bpmn_plane, NS)
+def bpmn_to_bytes(tree: ET.ElementTree) -> bytes:
+    # Zwracamy zawartość pliku BPMN jako bytes
+    import io
+    byte_stream = io.BytesIO()
+    tree.write(byte_stream, xml_declaration=True, encoding='UTF-8')
+    byte_stream.seek(0)
+    return byte_stream.read()
 
-    adjust_sequence_flow_waypoints(root, bpmn_plane, NS)
 
-    tree.write(output_bpmn_file, xml_declaration=True, encoding='UTF-8')
-    print(f"Updated BPMN file saved as {output_bpmn_file}")
+def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
+                      output_bpmn_file: Union[str, None] = None) -> Union[None, bytes]:
+    """
+    Adds roles to a BPMN file by modifying the lanes based on the provided task-role mapping.
+
+    :param input_bpmn_file: Path to the BPMN file or the content in bytes
+    :param task_role_map: Dictionary mapping tasks to roles
+    :param output_bpmn_file: Path where the modified BPMN file will be saved, or None if we want to return bytes
+    :return: None if saving to file, bytes if returning result
+    """
+    print('mm')
+    try:
+        if isinstance(input_bpmn_file, str):
+            tree = ET.parse(input_bpmn_file)
+        elif isinstance(input_bpmn_file, bytes):
+            temp_file_path = save_bytes_to_temp_file(input_bpmn_file)
+            tree = ET.parse(temp_file_path)
+        else:
+            raise ValueError("Unsupported input type. Must be str (file path) or bytes.")
+
+        root = tree.getroot()
+        process = root.find(f".//{{{NS['bpmn']}}}process")
+        bpmn_plane = root.find(f".//{{{NS['bpmndi']}}}BPMNPlane")
+
+
+        if bpmn_plane is None:
+            bpmn_plane = ET.SubElement(root, f"{{{NS['bpmndi']}}}BPMNPlane", {"bpmnElement": process.get('id')})
+
+        lane_set = ET.SubElement(process, f"{{{NS['bpmn']}}}laneSet")
+
+        adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set)
+        adjust_gateways(root, bpmn_plane, NS)
+        adjust_events(root, bpmn_plane, NS)
+        adjust_sequence_flow_waypoints(root, bpmn_plane, NS)
+
+        if output_bpmn_file:
+            tree.write(output_bpmn_file, xml_declaration=True, encoding='UTF-8')
+            print(f"Updated BPMN file saved as {output_bpmn_file}")
+        else:
+            return bpmn_to_bytes(tree)
+
+    except Exception as e:
+        print(f"Error updating BPMN: {e}")
 
 role_tasks_mapping = role_tasks_mapping(LOGS_PATH, ["resource", "action"])
-add_roles_to_bpmn(INPUT_PATH, OUTPUT_PATH, role_tasks_mapping)
+add_roles_to_bpmn(str(INPUT_PATH), role_tasks_mapping, str(OUTPUT_PATH))

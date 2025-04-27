@@ -17,9 +17,10 @@ OUTPUT_PATH = Path("xmls/repairExampleOutput.bpmn")
 LOGS_PATH = Path("logs/repairExample.csv")
 '''
 
-INPUT_PATH = Path("xmls/new_teleclaims_changed_labels.bpmn")
-OUTPUT_PATH = Path("xmls/TeleclaimsOutput.bpmn")
-LOGS_PATH = Path("logs/new_teleclaims_changed_labels.csv")
+INPUT_PATH = Path("../xmls/new_teleclaims_changed_labels.bpmn")
+OUTPUT_PATH = Path("../xmls/TeleclaimsOutput.bpmn")
+LOGS_PATH = Path("../logs/new_teleclaims_changed_labels.csv")
+
 
 
 
