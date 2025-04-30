@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import BpmnViewerComponent from './components/BPMNViewer';
-import { uploadBpmn } from './api';
-import { CssBaseline, AppBar, Toolbar, Grid, Typography, Box, CircularProgress,
+import { CssBaseline, AppBar, Toolbar, Grid, Typography, Box,
     ThemeProvider, createTheme, Tab, Tabs } from "@mui/material";
 import HomePage from "./pages/HomePage";
 import EventLogs from "./pages/EventLogs"
 import BPMNVisualisation from "./pages/BPMNVisualisation";
 import AddingRoles from "./pages/AddingRoles";
-import backgroundImage from "./assets/panoramic-view-sunset-night.jpg";
 
 const theme = createTheme({
   palette: {
@@ -49,6 +46,7 @@ const handleScroll = () => {
 const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setActiveTab(newValue);
     setErrors({});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
 return (
@@ -59,7 +57,7 @@ return (
     sx={{
       transition: 'all 0.75s ease-in-out',
       height: activeTab === 0 ? (isScrolled ? '64px' : '100vh') : '64px',
-      backgroundImage: `url(${backgroundImage})`,
+      backgroundColor: 'black',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       boxShadow: isScrolled || activeTab !== 0 ? 3 : 0,
@@ -100,7 +98,7 @@ return (
             justifyContent: "center",
             width: "auto",
             '& .MuiTab-root': {
-              color: "gray",
+              color: "#f0f0f0",
             },
             '& .Mui-selected': {
               color: "#ffffff",
@@ -130,12 +128,21 @@ return (
       zIndex: 0,
     }}
   >
-    <Box sx={{ width: "100%"}}>
-        <Grid container spacing={2}> </Grid>
-        {activeTab === 0 && <HomePage />}
-        {activeTab === 1 && <EventLogs />}
-        {activeTab === 2 && <BPMNVisualisation />}
-        {activeTab === 3 && <AddingRoles />}
+    <Box sx={{ width: "100%" }}>
+      <Grid container spacing={2}></Grid>
+
+      <div hidden={activeTab !== 0}>
+        <HomePage />
+      </div>
+      <div hidden={activeTab !== 1}>
+        <EventLogs />
+      </div>
+      <div hidden={activeTab !== 2}>
+        <BPMNVisualisation />
+      </div>
+      <div hidden={activeTab !== 3}>
+        <AddingRoles />
+      </div>
     </Box>
   </Box>
 
