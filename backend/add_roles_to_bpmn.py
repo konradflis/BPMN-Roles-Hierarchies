@@ -301,6 +301,43 @@ def adjust_events(root, bpmn_plane, NS):
             "width": "100", "height": "100"
         })
 
+def detect_crossing_flows(bpmn_plane, NS):
+    def get_segments(waypoints):
+        return [(waypoints[i], waypoints[i + 1]) for i in range(len(waypoints) - 1)]
+
+    def ccw(a, b, c):
+        return (c[1] - a[1]) * (b[0] - a[0]) > (b[1] - a[1]) * (c[0] - a[0])
+
+    def segments_intersect(seg1, seg2):
+        (a1, a2), (b1, b2) = seg1, seg2
+        return ccw(a1, b1, b2) != ccw(a2, b1, b2) and ccw(a1, a2, b1) != ccw(a1, a2, b2)
+
+    edges = bpmn_plane.findall(f".//{{{NS['bpmndi']}}}BPMNEdge")
+    flows_by_id = {
+        edge.attrib['bpmnElement']: [
+            (float(wp.attrib['x']), float(wp.attrib['y']))
+            for wp in edge.findall(f"{{{NS['ns6']}}}waypoint")
+        ]
+        for edge in edges
+    }
+
+    crossings = []
+    flow_ids = list(flows_by_id.keys())
+
+    for i in range(len(flow_ids)):
+        for j in range(i + 1, len(flow_ids)):
+            segs1 = get_segments(flows_by_id[flow_ids[i]])
+            segs2 = get_segments(flows_by_id[flow_ids[j]])
+            for s1 in segs1:
+                for s2 in segs2:
+                    if segments_intersect(s1, s2):
+                        crossings.append((flow_ids[i], flow_ids[j]))
+                        break
+                else:
+                    continue
+                break
+
+    return crossings
 
 def save_bytes_to_temp_file(file_bytes: bytes) -> str:
     temp_file = tempfile.NamedTemporaryFile(delete=False)
@@ -310,7 +347,6 @@ def save_bytes_to_temp_file(file_bytes: bytes) -> str:
 
 
 def bpmn_to_bytes(tree: ET.ElementTree) -> bytes:
-    # Zwracamy zawartość pliku BPMN jako bytes
     import io
     byte_stream = io.BytesIO()
     tree.write(byte_stream, xml_declaration=True, encoding='UTF-8')
@@ -351,6 +387,7 @@ def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
         adjust_gateways(root, bpmn_plane, NS, adjust_in_out=False)
         adjust_events(root, bpmn_plane, NS)
         adjust_sequence_flow_waypoints(root, bpmn_plane, NS)
+        crossings = detect_crossing_flows(bpmn_plane, NS)
 
         if output_bpmn_file:
             tree.write(output_bpmn_file, xml_declaration=True, encoding='UTF-8')
@@ -361,5 +398,5 @@ def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
     except Exception as e:
         print(f"Error updating BPMN: {e}")
 
-role_tasks_mapping = role_tasks_mapping(str(LOGS_PATH), ["Resource", "Activity"])
+role_tasks_mapping = role_tasks_mapping(str(LOGS_PATH), ["Role", "Activity"])
 add_roles_to_bpmn(str(INPUT_PATH), role_tasks_mapping, str(OUTPUT_PATH))

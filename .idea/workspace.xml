@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/backend/add_roles_to_bpmn.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/add_roles_to_bpmn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/const.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/const.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xmls/purchasingExampleOutput1.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/purchasingExampleOutput1.bpmn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xmls/repairExampleOutput.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/repairExampleOutput.bpmn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +108,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MiAPB$const.coverage" NAME="const Coverage Results" MODIFIED="1745785351745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/MiAPB$add_roles_to_bpmn.coverage" NAME="add_roles_to_bpmn Coverage Results" MODIFIED="1746737443028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/MiAPB$add_roles_to_bpmn.coverage" NAME="add_roles_to_bpmn Coverage Results" MODIFIED="1746738450276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/MiAPB$tasks_roles_mapping.coverage" NAME="tasks_roles_mapping Coverage Results" MODIFIED="1744308633412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MiAPB$main.coverage" NAME="main Coverage Results" MODIFIED="1746709227612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/MiAPB$process_xml_input.coverage" NAME="process_xml_input Coverage Results" MODIFIED="1744210093627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
