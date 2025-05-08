@@ -107,15 +107,6 @@ def adjust_sequence_flow_waypoints(root, bpmn_plane, NS):
         source_id = sequence_flow.get('sourceRef')
         target_id = sequence_flow.get('targetRef')
 
-        source_elem = get_bpmn_element_by_id(root, source_id, NS)
-        target_elem = get_bpmn_element_by_id(root, target_id, NS)
-
-        source_tag = source_elem.tag if source_elem is not None else ''
-        target_tag = target_elem.tag if target_elem is not None else ''
-
-        is_start_event = source_tag.endswith('startEvent')
-        is_end_event = target_tag.endswith('endEvent')
-
         source_shape = bpmn_plane.find(f".//{{{NS['bpmndi']}}}BPMNShape[@bpmnElement='{source_id}']")
         target_shape = bpmn_plane.find(f".//{{{NS['bpmndi']}}}BPMNShape[@bpmnElement='{target_id}']")
 
@@ -174,13 +165,8 @@ def adjust_sequence_flow_waypoints(root, bpmn_plane, NS):
 
                 end_x = target_x
                 end_y = target_y + target_h / 2
-                if is_end_event:
-                    start_y += 10
 
                 points = [(start_x, start_y)]
-
-                if is_start_event:
-                    end_y += 10
 
                 if abs(start_y - end_y) > 1:
                     mid_x = (start_x + end_x) / 2
@@ -228,7 +214,7 @@ def adjust_gateways(root, bpmn_plane, NS):
         y_pos = float(source_bounds.attrib['y'])
 
         x_pos = get_original_x_position(gateway_id, bpmn_plane, NS)
-        gateway_bounds.attrib['y'] = str(y_pos + 25)
+        gateway_bounds.attrib['y'] = str(y_pos + 15)
 
         gateway_shape = ET.SubElement(bpmn_plane, f"{{{NS['bpmndi']}}}BPMNShape", {
             "bpmnElement": gateway_id
@@ -275,7 +261,7 @@ def adjust_events(root, bpmn_plane, NS):
         event_bounds = event_shape.find(f".//{{{NS['omgdc']}}}Bounds")
         y_pos = float(source_bounds.attrib['y'])
         x_pos = get_original_x_position(ref_id, bpmn_plane, NS)
-        event_bounds.attrib['y'] = str(y_pos + 32)
+        event_bounds.attrib['y'] = str(y_pos + 22)
 
         event_shape = ET.SubElement(bpmn_plane, f"{{{NS['bpmndi']}}}BPMNShape", {
             "bpmnElement": event_id
