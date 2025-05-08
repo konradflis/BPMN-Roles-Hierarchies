@@ -90,6 +90,12 @@ def adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set):
         })
         y_position += lane_width
 
+def get_bpmn_element_by_id(root, element_id, NS):
+    """
+    Znajduje element BPMN po jego ID.
+    """
+    return root.find(f".//*[@id='{element_id}']")
+
 
 def adjust_sequence_flow_waypoints(root, bpmn_plane, NS):
     """
@@ -100,6 +106,15 @@ def adjust_sequence_flow_waypoints(root, bpmn_plane, NS):
     for sequence_flow in sequence_flows:
         source_id = sequence_flow.get('sourceRef')
         target_id = sequence_flow.get('targetRef')
+
+        source_elem = get_bpmn_element_by_id(root, source_id, NS)
+        target_elem = get_bpmn_element_by_id(root, target_id, NS)
+
+        source_tag = source_elem.tag if source_elem is not None else ''
+        target_tag = target_elem.tag if target_elem is not None else ''
+
+        is_start_event = source_tag.endswith('startEvent')
+        is_end_event = target_tag.endswith('endEvent')
 
         source_shape = bpmn_plane.find(f".//{{{NS['bpmndi']}}}BPMNShape[@bpmnElement='{source_id}']")
         target_shape = bpmn_plane.find(f".//{{{NS['bpmndi']}}}BPMNShape[@bpmnElement='{target_id}']")
@@ -159,8 +174,13 @@ def adjust_sequence_flow_waypoints(root, bpmn_plane, NS):
 
                 end_x = target_x
                 end_y = target_y + target_h / 2
+                if is_end_event:
+                    start_y += 10
 
                 points = [(start_x, start_y)]
+
+                if is_start_event:
+                    end_y += 10
 
                 if abs(start_y - end_y) > 1:
                     mid_x = (start_x + end_x) / 2
@@ -327,5 +347,5 @@ def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
     except Exception as e:
         print(f"Error updating BPMN: {e}")
 
-role_tasks_mapping = role_tasks_mapping(LOGS_PATH, ["resource", "action"])
+role_tasks_mapping = role_tasks_mapping(str(LOGS_PATH), ["Role", "Activity"])
 add_roles_to_bpmn(str(INPUT_PATH), role_tasks_mapping, str(OUTPUT_PATH))
