@@ -299,7 +299,6 @@ def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
     :param output_bpmn_file: Path where the modified BPMN file will be saved, or None if we want to return bytes
     :return: None if saving to file, bytes if returning result
     """
-    print('mm')
     try:
         if isinstance(input_bpmn_file, str):
             tree = ET.parse(input_bpmn_file)
