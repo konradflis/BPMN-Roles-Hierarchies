@@ -379,7 +379,7 @@
         <ns4:BPMNLabel />
       </ns4:BPMNShape>
       <ns4:BPMNShape bpmnElement="node26">
-        <ns5:Bounds height="50.0" width="50.0" x="1387.0" y="415.0" />
+        <ns5:Bounds height="50.0" width="50.0" x="1387.0" y="775.0" />
         <ns4:BPMNLabel />
       </ns4:BPMNShape>
       <ns4:BPMNShape bpmnElement="node22">
@@ -419,11 +419,11 @@
         <ns4:BPMNLabel />
       </ns4:BPMNShape>
       <ns4:BPMNShape bpmnElement="node8">
-        <ns5:Bounds height="50.0" width="50.0" x="337.0" y="835.0" />
+        <ns5:Bounds height="50.0" width="50.0" x="337.0" y="775.0" />
         <ns4:BPMNLabel />
       </ns4:BPMNShape>
       <ns4:BPMNShape bpmnElement="node2">
-        <ns5:Bounds height="50.0" width="50.0" x="687.0" y="1135.0" />
+        <ns5:Bounds height="50.0" width="50.0" x="687.0" y="985.0" />
         <ns4:BPMNLabel />
       </ns4:BPMNShape>
       <ns4:BPMNShape bpmnElement="node18">
@@ -461,11 +461,11 @@
       <ns4:BPMNEdge bpmnElement="edge15">
         <ns6:waypoint x="2857.0" y="1460.0" /><ns6:waypoint x="2937.0" y="1460.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge25">
-        <ns6:waypoint x="387.0" y="860.0" /><ns6:waypoint x="437.0" y="860.0" /><ns6:waypoint x="437.0" y="1160.0" /><ns6:waypoint x="487.0" y="1160.0" /></ns4:BPMNEdge>
+        <ns6:waypoint x="387.0" y="800.0" /><ns6:waypoint x="437.0" y="800.0" /><ns6:waypoint x="437.0" y="1160.0" /><ns6:waypoint x="487.0" y="1160.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge24">
         <ns6:waypoint x="957.0" y="1160.0" /><ns6:waypoint x="1037.0" y="1160.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge18">
-        <ns6:waypoint x="737.0" y="1160.0" /><ns6:waypoint x="787.0" y="1160.0" /><ns6:waypoint x="787.0" y="860.0" /><ns6:waypoint x="837.0" y="860.0" /></ns4:BPMNEdge>
+        <ns6:waypoint x="737.0" y="1010.0" /><ns6:waypoint x="787.0" y="1010.0" /><ns6:waypoint x="787.0" y="860.0" /><ns6:waypoint x="837.0" y="860.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge0">
         <ns6:waypoint x="3457.0" y="440.0" /><ns6:waypoint x="3497.0" y="440.0" /><ns6:waypoint x="3497.0" y="1460.0" /><ns6:waypoint x="3537.0" y="1460.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge6">
@@ -473,39 +473,39 @@
       <ns4:BPMNEdge bpmnElement="edge2">
         <ns6:waypoint x="2457.0" y="440.0" /><ns6:waypoint x="2537.0" y="440.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge21">
-        <ns6:waypoint x="1437.0" y="440.0" /><ns6:waypoint x="1537.0" y="440.0" /></ns4:BPMNEdge>
+        <ns6:waypoint x="1437.0" y="800.0" /><ns6:waypoint x="1487.0" y="800.0" /><ns6:waypoint x="1487.0" y="440.0" /><ns6:waypoint x="1537.0" y="440.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge14">
         <ns6:waypoint x="2657.0" y="440.0" /><ns6:waypoint x="2697.0" y="440.0" /><ns6:waypoint x="2697.0" y="1460.0" /><ns6:waypoint x="2737.0" y="1460.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge23">
         <ns6:waypoint x="1597.0" y="1120.0" /><ns6:waypoint x="1597.0" y="1040.0" /><ns6:waypoint x="1062.0" y="1040.0" /><ns6:waypoint x="1062.0" y="1135.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge27">
-        <ns6:waypoint x="257.0" y="740.0" /><ns6:waypoint x="297.0" y="740.0" /><ns6:waypoint x="297.0" y="860.0" /><ns6:waypoint x="337.0" y="860.0" /></ns4:BPMNEdge>
+        <ns6:waypoint x="257.0" y="740.0" /><ns6:waypoint x="297.0" y="740.0" /><ns6:waypoint x="297.0" y="800.0" /><ns6:waypoint x="337.0" y="800.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge9">
         <ns6:waypoint x="1857.0" y="440.0" /><ns6:waypoint x="1897.0" y="440.0" /><ns6:waypoint x="1897.0" y="740.0" /><ns6:waypoint x="1937.0" y="740.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge20">
-        <ns6:waypoint x="1437.0" y="440.0" /><ns6:waypoint x="1487.0" y="440.0" /><ns6:waypoint x="1487.0" y="1160.0" /><ns6:waypoint x="1537.0" y="1160.0" /></ns4:BPMNEdge>
+        <ns6:waypoint x="1437.0" y="800.0" /><ns6:waypoint x="1487.0" y="800.0" /><ns6:waypoint x="1487.0" y="1160.0" /><ns6:waypoint x="1537.0" y="1160.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge10">
         <ns6:waypoint x="2257.0" y="740.0" /><ns6:waypoint x="2297.0" y="740.0" /><ns6:waypoint x="2297.0" y="440.0" /><ns6:waypoint x="2337.0" y="440.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge19">
-        <ns6:waypoint x="1307.0" y="440.0" /><ns6:waypoint x="1387.0" y="440.0" /></ns4:BPMNEdge>
+        <ns6:waypoint x="1307.0" y="440.0" /><ns6:waypoint x="1347.0" y="440.0" /><ns6:waypoint x="1347.0" y="800.0" /><ns6:waypoint x="1387.0" y="800.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge8">
         <ns6:waypoint x="3657.0" y="1460.0" /><ns6:waypoint x="3697.0" y="1460.0" /><ns6:waypoint x="3697.0" y="140.0" /><ns6:waypoint x="3737.0" y="140.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge3">
         <ns6:waypoint x="37.0" y="740.0" /><ns6:waypoint x="137.0" y="740.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge16">
-        <ns6:waypoint x="607.0" y="1160.0" /><ns6:waypoint x="687.0" y="1160.0" /></ns4:BPMNEdge>
+        <ns6:waypoint x="607.0" y="1160.0" /><ns6:waypoint x="647.0" y="1160.0" /><ns6:waypoint x="647.0" y="1010.0" /><ns6:waypoint x="687.0" y="1010.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge4">
         <ns6:waypoint x="3857.0" y="140.0" /><ns6:waypoint x="3897.0" y="140.0" /><ns6:waypoint x="3897.0" y="440.0" /><ns6:waypoint x="3937.0" y="440.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge22">
         <ns6:waypoint x="1087.0" y="1160.0" /><ns6:waypoint x="1137.0" y="1160.0" /><ns6:waypoint x="1137.0" y="440.0" /><ns6:waypoint x="1187.0" y="440.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge26">
-        <ns6:waypoint x="897.0" y="820.0" /><ns6:waypoint x="897.0" y="740.0" /><ns6:waypoint x="362.0" y="740.0" /><ns6:waypoint x="362.0" y="835.0" /></ns4:BPMNEdge>
+        <ns6:waypoint x="897.0" y="820.0" /><ns6:waypoint x="897.0" y="695.0" /><ns6:waypoint x="362.0" y="695.0" /><ns6:waypoint x="362.0" y="775.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge1">
         <ns6:waypoint x="1657.0" y="440.0" /><ns6:waypoint x="1737.0" y="440.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge13">
         <ns6:waypoint x="3057.0" y="1460.0" /><ns6:waypoint x="3097.0" y="1460.0" /><ns6:waypoint x="3097.0" y="740.0" /><ns6:waypoint x="3137.0" y="740.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge17">
-        <ns6:waypoint x="737.0" y="1160.0" /><ns6:waypoint x="837.0" y="1160.0" /></ns4:BPMNEdge>
+        <ns6:waypoint x="737.0" y="1010.0" /><ns6:waypoint x="787.0" y="1010.0" /><ns6:waypoint x="787.0" y="1160.0" /><ns6:waypoint x="837.0" y="1160.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge7">
         <ns6:waypoint x="3257.0" y="740.0" /><ns6:waypoint x="3297.0" y="740.0" /><ns6:waypoint x="3297.0" y="440.0" /><ns6:waypoint x="3337.0" y="440.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge5">
@@ -514,6 +514,6 @@
         <ns6:waypoint x="4057.0" y="440.0" /><ns6:waypoint x="4097.0" y="440.0" /><ns6:waypoint x="4097.0" y="140.0" /><ns6:waypoint x="4137.0" y="140.0" /></ns4:BPMNEdge>
       <ns4:BPMNEdge bpmnElement="edge12">
         <ns6:waypoint x="4257.0" y="140.0" /><ns6:waypoint x="4337.0" y="140.0" /></ns4:BPMNEdge>
-    <ns4:BPMNShape bpmnElement="Lane_Financial_Manager"><ns5:Bounds x="0" y="0" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Purchasing_Agent"><ns5:Bounds x="0" y="300" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Requester"><ns5:Bounds x="0" y="600" width="5000" height="420" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Requester_Manager"><ns5:Bounds x="0" y="1020" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Supplier"><ns5:Bounds x="0" y="1320" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node2"><ns5:Bounds x="687.0" y="1120.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node3"><ns5:Bounds x="1037.0" y="1120.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node8"><ns5:Bounds x="337.0" y="820.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node26"><ns5:Bounds x="1387.0" y="400.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node6"><ns5:Bounds x="137.0" y="700.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node18"><ns5:Bounds x="4337.0" y="100.0" width="100" height="100" /></ns4:BPMNShape></ns4:BPMNPlane>
+    <ns4:BPMNShape bpmnElement="Lane_Financial_Manager"><ns5:Bounds x="0" y="0" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Purchasing_Agent"><ns5:Bounds x="0" y="300" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Requester"><ns5:Bounds x="0" y="600" width="5000" height="420" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Requester_Manager"><ns5:Bounds x="0" y="1020" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="Lane_Supplier"><ns5:Bounds x="0" y="1320" width="5000" height="300" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node2"><ns5:Bounds x="687.0" y="970.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node3"><ns5:Bounds x="1037.0" y="1120.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node8"><ns5:Bounds x="337.0" y="760.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node26"><ns5:Bounds x="1387.0" y="760.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node6"><ns5:Bounds x="137.0" y="700.0" width="100" height="100" /></ns4:BPMNShape><ns4:BPMNShape bpmnElement="node18"><ns5:Bounds x="4337.0" y="100.0" width="100" height="100" /></ns4:BPMNShape></ns4:BPMNPlane>
   </ns4:BPMNDiagram>
 </ns0:definitions>

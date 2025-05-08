@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 from const import NS, INPUT_PATH, OUTPUT_PATH, LOGS_PATH
 from typing import Union
 import tempfile
+import statistics
 
 
 def get_original_x_position(element_id, bpmn_plane, NS):
@@ -185,7 +186,7 @@ def adjust_sequence_flow_waypoints(root, bpmn_plane, NS):
 
 
 
-def adjust_gateways(root, bpmn_plane, NS):
+def adjust_gateways(root, bpmn_plane, NS, adjust_in_out=False):
     all_elements = root.findall(f".//{{{NS['bpmn']}}}*")
 
     shape_by_id = {
@@ -201,6 +202,8 @@ def adjust_gateways(root, bpmn_plane, NS):
     for gateway in gateways:
         gateway_id = gateway.get('id')
         incoming = gateway.find(f"{{{NS['bpmn']}}}incoming")
+        incoming_all = gateway.findall(f"{{{NS['bpmn']}}}incoming")
+        outgoing_all = gateway.findall(f"{{{NS['bpmn']}}}outgoing")
         incoming_edge_id = incoming.text
         flow = flows_by_id.get(incoming_edge_id)
 
@@ -211,7 +214,33 @@ def adjust_gateways(root, bpmn_plane, NS):
         source_bounds = source_shape.find(f".//{{{NS['omgdc']}}}Bounds")
         gateway_bounds = gateway_shape.find(f".//{{{NS['omgdc']}}}Bounds")
 
-        y_pos = float(source_bounds.attrib['y'])
+        if adjust_in_out:
+            if len(incoming_all) >= len(outgoing_all):
+                flow_ids = [f.text for f in incoming_all]
+                connected_ids = [
+                    flows_by_id[fid].attrib['sourceRef']
+                    for fid in flow_ids if fid in flows_by_id
+                ]
+            else:
+                flow_ids = [f.text for f in outgoing_all]
+                connected_ids = [
+                    flows_by_id[fid].attrib['targetRef']
+                    for fid in flow_ids if fid in flows_by_id
+                ]
+
+            y_positions = []
+            for cid in connected_ids:
+                shape = shape_by_id.get(cid)
+                if shape is None:
+                    continue
+                bounds = shape.find(f".//{{{NS['omgdc']}}}Bounds")
+                if bounds is None:
+                    continue
+                y_positions.append(float(bounds.attrib['y']))
+
+            y_pos = statistics.median(y_positions)
+        else:
+            y_pos = float(source_bounds.attrib['y'])
 
         x_pos = get_original_x_position(gateway_id, bpmn_plane, NS)
         gateway_bounds.attrib['y'] = str(y_pos + 15)
@@ -319,7 +348,7 @@ def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
         lane_set = ET.SubElement(process, f"{{{NS['bpmn']}}}laneSet")
 
         adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set)
-        adjust_gateways(root, bpmn_plane, NS)
+        adjust_gateways(root, bpmn_plane, NS, adjust_in_out=False)
         adjust_events(root, bpmn_plane, NS)
         adjust_sequence_flow_waypoints(root, bpmn_plane, NS)
 
@@ -332,5 +361,5 @@ def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
     except Exception as e:
         print(f"Error updating BPMN: {e}")
 
-role_tasks_mapping = role_tasks_mapping(str(LOGS_PATH), ["Role", "Activity"])
+role_tasks_mapping = role_tasks_mapping(str(LOGS_PATH), ["Resource", "Activity"])
 add_roles_to_bpmn(str(INPUT_PATH), role_tasks_mapping, str(OUTPUT_PATH))
