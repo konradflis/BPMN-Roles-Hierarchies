@@ -2,24 +2,39 @@ from fastapi import APIRouter, UploadFile, Form
 from fastapi.responses import Response
 from backend.tasks_roles_mapping import role_tasks_mapping
 from backend.add_roles_to_bpmn import add_roles_to_bpmn
-
+import json
 router = APIRouter()
+
+@router.post("/api/extract-roles")
+async def extract_roles(
+    csvFile: UploadFile,
+    taskColumn: str = Form(...),
+    roleColumn: str = Form(...)
+):
+    csv_content = await csvFile.read()
+    headers = [roleColumn, taskColumn]
+    mapping = role_tasks_mapping(csv_content, headers)
+    role_keys = [*mapping]
+    return {"roles": role_keys}
+
 
 @router.post("/api/add-roles")
 async def add_roles(
     bpmnFile: UploadFile,
     csvFile: UploadFile,
+    adjust_in_out: bool = Form(...),
     taskColumn: str = Form(...),
-    roleColumn: str = Form(...)
+    roleColumn: str = Form(...),
+    role_order: str = Form(...)
 ):
     bpmn_content = await bpmnFile.read()
     csv_content = await csvFile.read()
 
     headers = [roleColumn, taskColumn]
-
     mapping = role_tasks_mapping(csv_content, headers)
 
-    modified_bpmn_content = add_roles_to_bpmn(bpmn_content, mapping)
+    ordered_roles = json.loads(role_order)
+    ordered_mapping = {role: mapping[role] for role in ordered_roles if role in mapping}
 
-
+    modified_bpmn_content = add_roles_to_bpmn(bpmn_content, ordered_mapping, adjust_in_out=adjust_in_out)
     return Response(content=modified_bpmn_content, media_type="application/xml")

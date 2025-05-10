@@ -355,7 +355,7 @@ def bpmn_to_bytes(tree: ET.ElementTree) -> bytes:
 
 
 def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
-                      output_bpmn_file: Union[str, None] = None) -> Union[None, bytes]:
+                      output_bpmn_file: Union[str, None] = None, adjust_in_out=False) -> Union[None, bytes]:
     """
     Adds roles to a BPMN file by modifying the lanes based on the provided task-role mapping.
 
@@ -384,7 +384,7 @@ def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
         lane_set = ET.SubElement(process, f"{{{NS['bpmn']}}}laneSet")
 
         adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set)
-        adjust_gateways(root, bpmn_plane, NS, adjust_in_out=False)
+        adjust_gateways(root, bpmn_plane, NS, adjust_in_out=adjust_in_out)
         adjust_events(root, bpmn_plane, NS)
         adjust_sequence_flow_waypoints(root, bpmn_plane, NS)
         crossings = detect_crossing_flows(bpmn_plane, NS)
