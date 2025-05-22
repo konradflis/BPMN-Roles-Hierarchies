@@ -23,6 +23,7 @@ const AddingRoles: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [modifiedBpmnXml, setModifiedBpmnXml] = useState<string>("");
   const [adjustInOut, setAdjustInOut] = useState<boolean>(false); // Stan dla checkboxa
+  const [useOptimal, setUseOptimal] = useState(false);
 
   const [bpmnUploaded, setBpmnUploaded] = useState(false);
   const [csvUploaded, setCsvUploaded] = useState(false);
@@ -98,34 +99,39 @@ const AddingRoles: React.FC = () => {
   };
 
   const handleSendToBackend = async () => {
-    if (!bpmnFile || !csvFile || !taskColumn || !roleColumn) {
-      alert("Upload files and select columns first!");
-      return;
-    }
+  if (!bpmnFile || !csvFile || !taskColumn || !roleColumn) {
+    alert("Upload files and select columns first!");
+    return;
+  }
 
-    setLoading(true);
-    try {
-      const formData = new FormData();
-      formData.append("bpmnFile", bpmnFile);
-      formData.append("csvFile", csvFile);
-      formData.append("adjust_in_out", adjustInOut.toString());
-      formData.append("taskColumn", taskColumn);
-      formData.append("roleColumn", roleColumn);
+  setLoading(true);
+  try {
+    const formData = new FormData();
+    formData.append("bpmnFile", bpmnFile);
+    formData.append("csvFile", csvFile);
+    formData.append("adjust_in_out", adjustInOut.toString());
+    formData.append("taskColumn", taskColumn);
+    formData.append("roleColumn", roleColumn);
+
+    if (!useOptimal) {
       formData.append("role_order", JSON.stringify(roleOrder));
-
-      const response = await fetch("api/add-roles", {
-        method: "POST",
-        body: formData,
-      });
-
-      const result = await response.text();
-      setModifiedBpmnXml(result);
-    } catch (error) {
-      console.error("Error sending to backend:", error);
-    } finally {
-      setLoading(false);
     }
-  };
+
+    const endpoint = useOptimal ? "api/add-roles-optim" : "api/add-roles";
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.text();
+    setModifiedBpmnXml(result);
+  } catch (error) {
+    console.error("Error sending to backend:", error);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <Box
@@ -278,6 +284,27 @@ const AddingRoles: React.FC = () => {
                 label="Adjust In/Out"
                 sx={{ color: "white" }}
               />
+
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={useOptimal}
+                    onChange={(e) => setUseOptimal(e.target.checked)}
+                    name="useOptimal"
+                    sx={{
+                      color: "white",
+                      '&.Mui-checked': {
+                        color: "#00e676",
+                      },
+                      '& .MuiSvgIcon-root': {
+                        fontSize: 26,
+                      },
+                    }}
+                  />
+                }
+                label="Use Optimal Scenario"
+                sx={{ color: "white" }}
+              />
             </Box>
 
             {taskColumn && roleColumn && (
@@ -286,7 +313,7 @@ const AddingRoles: React.FC = () => {
 
           </Box>
 
-          {rolesFetched && (
+          {rolesFetched && !useOptimal &&(
             <Box sx={{ marginTop: 4, width: 600 }}>
               <Typography variant="h6" gutterBottom>
                 Sort roles:
