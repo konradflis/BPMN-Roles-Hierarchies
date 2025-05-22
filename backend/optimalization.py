@@ -3,9 +3,13 @@ from add_roles_to_bpmn import add_roles_to_bpmn
 from itertools import permutations
 import xml.etree.ElementTree as ET
 from const import NS
+from typing import TypedDict
 
+class Point(TypedDict):
+    x: float
+    y: float
 
-def distance(point1: dict, point2:dict):
+def distance(point1: Point, point2: Point):
     return np.sqrt((point1['x'] - point2['x'])**2 + (point1['y'] - point2['y'])**2)
 
 
