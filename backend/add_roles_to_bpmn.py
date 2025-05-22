@@ -38,7 +38,6 @@ def adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set):
 
     for role, task_list in task_role_map.items():
         role_id = f"Lane_{role.replace(' ', '_')}"
-
         lane = ET.SubElement(lane_set, f"{{{NS['bpmn']}}}lane", {"id": role_id, "name": role})
         role_ids[role] = lane
 
@@ -46,16 +45,8 @@ def adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set):
             "bpmnElement": lane.get('id')
         })
 
-        lane_width = 300
-
-        lane_y_position = y_position + 100
-
         task_positions_dict = {}
-
         for task_name in task_list:
-            task_id = None
-            task_x_position = None
-
             for task in tasks:
                 if task.get('name') == task_name:
                     task_id = task.get('id')
@@ -65,31 +56,37 @@ def adjust_tasks(root, bpmn_plane, NS, task_role_map, lane_set):
                     task_positions_dict[task_x_position].append(task_id)
                     break
 
-            task_indices = {}
-            for x, tasks_with_the_same_x in task_positions_dict.items():
-                for idx, t in enumerate(tasks_with_the_same_x):
-                    task_indices[t] = idx
-            max_vertical_tasks = max(task_indices.values()) + 1
+        task_indices = {}
+        for x, task_ids in task_positions_dict.items():
+            for idx, tid in enumerate(task_ids):
+                task_indices[tid] = idx
+        max_vertical_tasks = max(task_indices.values()) + 1
+        lane_height = max(150, 150 + (max_vertical_tasks - 1) * 120)
 
-            lane_width = 300 + (max_vertical_tasks - 1) * 120
+        for task_name in task_list:
+            for task in tasks:
+                if task.get('name') == task_name:
+                    task_id = task.get('id')
+                    idx = task_indices.get(task_id, 0)
+                    task_shape = bpmn_plane.find(f".//{{{NS['bpmndi']}}}BPMNShape[@bpmnElement='{task_id}']")
+                    if task_shape is not None:
+                        bounds = task_shape.find(f"{{{NS['omgdc']}}}Bounds")
+                        if bounds is not None:
+                            # Najważniejsza linia: ustawienie Y tasku na podstawie Y lane'a!
+                            bounds.set('y', str(y_position + 20 + idx * 120))
+                            bounds.set('height', '80')
+                            bounds.set('width', '120')
 
-            if task_id:
-                task_shape = bpmn_plane.find(f".//{{{NS['bpmndi']}}}BPMNShape[@bpmnElement='{task_id}']")
-                if task_shape is not None:
-                    bounds = task_shape.find(f"{{{NS['omgdc']}}}Bounds")
-                    if bounds is not None:
-                        bounds.set('y', str(lane_y_position + task_indices[task_id] * 120))
-                        bounds.set('width', str(120))
-
-                flow_ref = ET.SubElement(lane, f"{{{NS['bpmn']}}}flowNodeRef")
-                flow_ref.text = task_id
-
+                    flow_ref = ET.SubElement(lane, f"{{{NS['bpmn']}}}flowNodeRef")
+                    flow_ref.text = task_id
 
         ET.SubElement(lane_shape, f"{{{NS['omgdc']}}}Bounds", {
             "x": "0", "y": str(y_position),
-            "width": "5000", "height": str(lane_width)
+            "width": "5000", "height": str(lane_height)
         })
-        y_position += lane_width
+
+        y_position += lane_height
+
 
 def get_bpmn_element_by_id(root, element_id, NS):
     """
@@ -355,7 +352,7 @@ def bpmn_to_bytes(tree: ET.ElementTree) -> bytes:
 
 
 def add_roles_to_bpmn(input_bpmn_file: Union[str, bytes], task_role_map: dict,
-                      output_bpmn_file: Union[str, None] = None, adjust_in_out=False) -> Union[None, bytes]:
+                      output_bpmn_file: Union[str, None] = None, adjust_in_out: bool = False) -> Union[None, bytes]:
     """
     Adds roles to a BPMN file by modifying the lanes based on the provided task-role mapping.
 
