@@ -14,6 +14,8 @@ def distance(point1: Point, point2: Point):
 
 
 def cost_fun(bpmn_mode: str | bytes) -> float:
+    if bpmn_mode is None:
+        return np.inf
     root = ET.fromstring(bpmn_mode)
     total_length = 0.0
 
@@ -31,7 +33,7 @@ def caluculate_best_scenario(bpmn_mode: str | bytes, map_role: dict, adjust_in_o
     fun_cost = np.inf
     best_model = None
     for scenario in list_of_scenario:
-        new_model = add_roles_to_bpmn(bpmn_mode, scenario, adjust_in_out)
+        new_model = add_roles_to_bpmn(bpmn_mode, scenario, adjust_in_out=adjust_in_out)
         scenario_cost = cost_fun(new_model)
         if scenario_cost < fun_cost:
             best_model = new_model
