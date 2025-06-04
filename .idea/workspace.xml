@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="308b7deb-6690-4b0e-8cce-cdb6e2364875" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/MiAPB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MiAPB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/add_roles_to_bpmn.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/add_roles_to_bpmn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/const.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/const.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/add_roles_to_bpmn.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/add_roles_to_bpmn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/const.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/const.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/format_xml.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/format_xml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/optimalization.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/optimalization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/process_xml_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/process_xml_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routers/add_roles.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routers/add_roles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tasks_roles_mapping.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/tasks_roles_mapping.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xmls/purchasingExampleOutput1.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/purchasingExampleOutput1.bpmn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,23 +50,25 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.override.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Python.add_roles_to_bpmn.executor&quot;: &quot;Run&quot;,
     &quot;Python.const.executor&quot;: &quot;Run&quot;,
     &quot;Python.format_xml.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.process_xml_input.executor&quot;: &quot;Run&quot;,
     &quot;Python.tasks_roles_mapping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.usun_test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/flisk/Desktop/NotOnedrive/TBP_WEB&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/komputer/OneDrive/Pulpit/Prace studia/Magisterka/semestr1/MPB/BPMN-Roles-Hierarchies&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -64,16 +77,87 @@
       <recent name="C:\Users\flisk\OneDrive\Studia_OneDrive\Semestr 8\Mapowanie i analiza procesow\MiAPB\frontend\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\komputer\OneDrive\Pulpit\Prace studia\Magisterka\semestr1\MPB\BPMN-Roles-Hierarchies\backend\app" />
+      <recent name="C:\Users\komputer\OneDrive\Pulpit\Prace studia\Magisterka\semestr1\MPB\BPMN-Roles-Hierarchies\backend\utils" />
+      <recent name="C:\Users\komputer\OneDrive\Pulpit\Prace studia\Magisterka\semestr1\MPB\BPMN-Roles-Hierarchies\frontend" />
       <recent name="C:\Users\flisk\OneDrive\Studia_OneDrive\Semestr 8\Mapowanie i analiza procesow\MiAPB\backend\routers" />
       <recent name="C:\Users\flisk\OneDrive\Studia_OneDrive\Semestr 8\Mapowanie i analiza procesow\MiAPB\backend" />
-      <recent name="C:\Users\flisk\OneDrive\Studia_OneDrive\Semestr 8\Mapowanie i analiza procesow\MiAPB\frontend\src" />
     </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.override.yml: Compose Deployment">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MiAPB" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\komputer\OneDrive\Pulpit\Prace studia\Magisterka\semestr1\MPB\BPMN-Roles-Hierarchies\backend\app\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="usun_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MiAPB" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/usun_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.override.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.override.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.override.yml: Compose Deployment" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.usun_test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
-        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
+        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
       </set>
     </attachedChunks>
   </component>
@@ -100,18 +184,35 @@
       <workItem from="1745781946170" duration="7805000" />
       <workItem from="1745956319217" duration="25000" />
       <workItem from="1746031738153" duration="8866000" />
+      <workItem from="1747921244422" duration="10381000" />
+      <workItem from="1747932027567" duration="255000" />
+      <workItem from="1748966445223" duration="6365000" />
+      <workItem from="1748974338947" duration="1472000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MiAPB$const.coverage" NAME="const Coverage Results" MODIFIED="1745785351745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/MiAPB$add_roles_to_bpmn.coverage" NAME="add_roles_to_bpmn Coverage Results" MODIFIED="1746738450276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/MiAPB$tasks_roles_mapping.coverage" NAME="tasks_roles_mapping Coverage Results" MODIFIED="1744308633412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MiAPB$main.coverage" NAME="main Coverage Results" MODIFIED="1746709227612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/MiAPB$process_xml_input.coverage" NAME="process_xml_input Coverage Results" MODIFIED="1744210093627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MiAPB$format_xml.coverage" NAME="format_xml Coverage Results" MODIFIED="1744643588978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BPMN_Roles_Hierarchies$main.coverage" NAME="main Coverage Results" MODIFIED="1748969241735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/MiAPB$add_roles_to_bpmn.coverage" NAME="add_roles_to_bpmn Coverage Results" MODIFIED="1746738450276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/MiAPB$main.coverage" NAME="main Coverage Results" MODIFIED="1746709227612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/MiAPB$const.coverage" NAME="const Coverage Results" MODIFIED="1745785351745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/MiAPB$process_xml_input.coverage" NAME="process_xml_input Coverage Results" MODIFIED="1744210093627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BPMN_Roles_Hierarchies$usun_test.coverage" NAME="usun_test Coverage Results" MODIFIED="1747931468372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/MiAPB$tasks_roles_mapping.coverage" NAME="tasks_roles_mapping Coverage Results" MODIFIED="1744308633412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 
 # Insert the file path below
 # DATA SOURCE: https://processmind.com/resources/docs/example-files/bpmn-examples
-file_path = "../xmls/purchasingExampleRoles.bpmn"
+file_path = "../../xmls/purchasingExampleRoles.bpmn"
 
 tree = ET.parse(file_path)
 root = tree.getroot()

@@ -7,9 +7,9 @@ NS = {
     'ns6': 'http://www.omg.org/spec/DD/20100524/DI'
 }
 
-INPUT_PATH = Path("../xmls/purchasingExampleRoles.bpmn")
-OUTPUT_PATH = Path("../xmls/purchasingExampleOutput1.bpmn")
-LOGS_PATH = Path("../logs/purchasingExample.csv")
+INPUT_PATH = Path("../../../xmls/purchasingExampleRoles.bpmn")
+OUTPUT_PATH = Path("../../../xmls/purchasingExampleOutput1.bpmn")
+LOGS_PATH = Path("../../../logs/purchasingExample.csv")
 
 # INPUT_PATH = Path("../xmls/repairExample.bpmn")
 # OUTPUT_PATH = Path("../xmls/repairExampleOutput.bpmn")

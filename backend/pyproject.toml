@@ -1,0 +1,21 @@
+[project]
+name = "bpmn-roles-hierarchies"
+version = "1.0.0"
+description = "This project explores automatic BPMN roles and hierarchies detections and updates"
+authors = [
+    {name = "Klaudiusz Grobelski"},
+    {name = "Konrad Flis"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi (>=0.115.12,<0.116.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "python-multipart (>=0.0.20,<0.0.21)",
+    "uvicorn (>=0.34.3,<0.35.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

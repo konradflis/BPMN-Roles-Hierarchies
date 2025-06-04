@@ -1,4 +1,4 @@
-from tasks_roles_mapping import role_tasks_mapping
+from utils.tasks_roles_mapping import role_tasks_mapping
 import xml.etree.ElementTree as ET
 from const import NS, INPUT_PATH, OUTPUT_PATH, LOGS_PATH
 from typing import Union
