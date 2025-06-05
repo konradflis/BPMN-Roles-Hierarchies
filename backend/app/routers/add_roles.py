@@ -1,8 +1,8 @@
 from fastapi import APIRouter, UploadFile, Form
 from fastapi.responses import Response
-from utils.tasks_roles_mapping import role_tasks_mapping
-from utils.add_roles_to_bpmn import add_roles_to_bpmn
-from utils.optimalization import caluculate_best_scenario
+from ..utils.tasks_roles_mapping import role_tasks_mapping
+from ..utils.add_roles_to_bpmn import add_roles_to_bpmn
+from ..utils.optimalization import caluculate_best_scenario
 import json
 router = APIRouter()
 

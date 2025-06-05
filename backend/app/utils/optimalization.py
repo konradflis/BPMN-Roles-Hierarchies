@@ -1,8 +1,8 @@
 import numpy as np
-from add_roles_to_bpmn import add_roles_to_bpmn
+from .add_roles_to_bpmn import add_roles_to_bpmn
 from itertools import permutations
 import xml.etree.ElementTree as ET
-from const import NS
+from .const import NS
 from typing import TypedDict
 
 class Point(TypedDict):
