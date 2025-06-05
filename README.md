@@ -1,6 +1,6 @@
 # BPMN Roles and Hierarchies
 
-This project explores the automatic detection and updating of roles and organizational hierarchies in BPMN diagrams. The main goal is to support business process management by analyzing the organizational structure and role assignments within BPMN models. The project was developed as part of the course *Modeling and Analysis of Business Processes* in the Master's program in *Automation and Robotics – IT in Control and Management* at AGH University of Krakow.  
+This project explores the automatic detection and updating of roles and organizational hierarchies in BPMN diagrams. The main goal is to support business process management by analyzing the organizational structure and role assignments within BPMN models. The project was developed as part of the course *Modeling and Analysis of Business Processes* in the Master's program in *Automatic Control and Robotics – IT in Control and Management* at AGH University of Krakow.  
 
 ## Project Objective
 The automation of this process is based on event logs, which store information about the roles of individuals performing specific tasks. Based on these logs, a .bpmn model can be generated using tools such as Apromore. However, such models lack role information. By having a mapping of roles and their assigned tasks, it becomes possible to modify the model structure by adding swimlanes and repositioning elements accordingly.
